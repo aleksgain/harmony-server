@@ -38,6 +38,7 @@ async def root() -> HTMLResponse:
 
 
 @root_router.get("/healthz")
+@root_router.get("/api/health")
 async def healthz(request: Request) -> dict[str, object]:
     return {
         "status": "ok",

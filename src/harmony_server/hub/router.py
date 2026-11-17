@@ -31,9 +31,15 @@ def _reg(request: Request) -> HubRegistry:
 
 
 async def owned_hub(hub_id: str, request: Request, session: SessionDep, account: AccountDep) -> Hub:
-    """Resolve ``{id}`` (internal id or globalRemoteId) to a hub owned by the caller."""
+    """Resolve ``{id}`` (globalRemoteId, hub uuid or internal id) to a hub owned by the caller.
+
+    The desktop client knows a discovered hub by its uuid and a hub added by IP by its
+    remote id, so both must work.
+    """
     reg = _reg(request)
     hub = await reg.get_by_remote_id(session, hub_id)
+    if hub is None and not hub_id.isdigit():
+        hub = await reg.get_by_uuid(session, hub_id)
     if hub is None and hub_id.isdigit():
         hub = await session.get(Hub, int(hub_id))
     if hub is None or hub.account_id != account.id:
