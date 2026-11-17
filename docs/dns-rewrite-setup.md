@@ -13,6 +13,7 @@ Point all of these at the server (`192.168.1.10` below):
 | `svcs.myharmony.com` | Discovery.svc, provisioning, WCF json2 services |
 | `lb-svcs.myharmony.com` | alias of svcs (MyHarmony uses it for hubs on firmware < 4.14.18) |
 | `cf-svcs.myharmony.com` | alias of svcs (CloudFront Discovery entry) |
+| `ping.myharmony.com` | hub connectivity check (connects and closes). A CNAME of `cf-svcs`, so it **must** be overridden too: a resolver with the `cf-svcs` CNAME cached will otherwise send it to CloudFront |
 | `setup.myharmony.com` | provisioning / account |
 | `sl.dhg.myharmony.com` | web client (placeholder for now) |
 | `content.dhg.myharmony.com`, `files.myharmony.com` | static content, device DB |
@@ -22,6 +23,9 @@ Point all of these at the server (`192.168.1.10` below):
 
 `accounts.logi.com` is shared with other Logitech products. Only override it for the
 clients that need it (per-client DNS, or `/etc/hosts` on the legacy-app PC).
+
+The hub also connects to `pubsub.pubnub.com` (PubNub). Do not override it: it is not a
+Logitech host and harmony-server does not serve it. See [hub-findings.md](hub-findings.md).
 
 Logitech's own service directory lists more hosts (`perrier-svcs`, `ems`, `geo`,
 `appcompatibility`, ...). Requests to hosts we do not know are not rewritten, so they
@@ -78,7 +82,9 @@ curl -k https://svcs.myharmony.com/healthz
 ```
 
 Some devices ignore DHCP-provided DNS or use DoH. If the hub's traffic never arrives, look
-at your firewall: block outbound 53/853 from the hub's IP, or redirect its DNS with NAT.
+at your firewall. If the hub sits on an isolated IoT VLAN (the UniFi default), allow the
+hub to reach the server on TCP 80/443: the hub's DNS lookups succeed, but its connections
+are dropped silently at the gateway. Also: block outbound 53/853 from the hub's IP, or redirect its DNS with NAT.
 
 ## Proxy mode and the DNS loop
 

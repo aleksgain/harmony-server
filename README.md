@@ -122,8 +122,11 @@ What is known and what is guessed, plainly:
 | Config bundle **format** the hub downloads | **Unknown.** We serve the inverse of the hub's local `engine?config` (`activity[]`, `device[]`, `configVersion`, `contentVersion`). A real hub may reject it. Marked `TODO: validate against captured Discovery.svc packet`. |
 | `getProvisionInfo` / `account?provision` | Shapes known from aioharmony and the decompiled client. Note: those are calls *to the hub*. Whether the hub also calls the cloud this way is unconfirmed. |
 | WCF json2 bodies (ProvisionHub, GetHubCloudToken, StartCompile, Security signin, ...) | Operation names and response field names are known from contracts. Request bodies are guesses. |
-| Whether stock hub firmware accepts our TLS cert | Untested. Probably not. |
-| Firmware endpoint schema | Unknown. Answers "no update". |
+| Whether stock hub firmware accepts our TLS cert | **Tested (fw 4.15.600): no for Discovery** (`unknown_ca`), yes for the update check and the time call, which do not verify. See [docs/hub-findings.md](docs/hub-findings.md). |
+| Firmware endpoint schema | **Partly known.** The hub calls `POST .../SoftwareUpdates/getUpdates` (captured), not the per-unit `info` route we serve. Not implemented yet. |
+| `home.myharmony.com/time/current` | **Known** (captured). Not implemented yet. |
+| Config bundle top-level fields | The real `engine?config` has `dataConsent`, `sla`, `global.timeStampHash`, `content.contentImageHost`, and no top-level `configVersion`. See [docs/hub-findings.md](docs/hub-findings.md). |
+| PubNub (`pubsub.pubnub.com`) | The hub subscribes to it, probably for cloud push ("sync now"). **Unknown** channel and messages. |
 
 **The single most useful contribution is a capture of a hub syncing with Logitech's
 cloud, while it still exists.** Run `SERVER_MODE=proxy`, factory-reset a spare hub, and
