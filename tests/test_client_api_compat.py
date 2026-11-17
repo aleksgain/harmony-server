@@ -47,3 +47,65 @@ def test_other_accounts_cannot_resolve_by_uuid(client: TestClient, user: dict[st
         "/api/auth/register", json={"email": "bob@example.com", "password": "hunter22hunter"}
     ).json()
     assert client.get(f"/api/hubs/{uuid}/status", headers=auth(other)).status_code == 404
+
+
+def test_put_config_accepts_poweroff_with_empty_roles_list(
+    client: TestClient, user: dict[str, str]
+) -> None:
+    """Shape copied from a real hub's engine?config: PowerOff has ``"roles": []``."""
+    client.post("/api/hubs/claim", json={"hubId": "42"}, headers=auth(user))
+    cfg = {
+        "device": [],
+        "activity": [
+            {
+                "id": "-1",
+                "label": "PowerOff",
+                "type": "PowerOff",
+                "roles": [],
+                "rules": [],
+                "enterActions": [],
+                "fixit": {},
+                "sequences": [],
+                "activityTypeDisplayName": "Default",
+            }
+        ],
+    }
+    r = client.put("/api/hubs/42/config", json=cfg, headers=auth(user))
+    assert r.status_code == 200, r.text
+
+
+def test_config_read_from_hub_round_trips(client: TestClient, user: dict[str, str]) -> None:
+    """A hub's engine?config has no activity ``devices`` list (fixit keys are the
+    devices) and already includes PowerOff. Both must survive PUT then GET."""
+    client.post("/api/hubs/claim", json={"hubId": "43"}, headers=auth(user))
+    fixit = {
+        "101": {"id": "101", "Power": "On", "Input": "HDMI 1"},
+        "102": {"id": "102", "Power": "Off"},
+    }
+    cfg = {
+        "device": [
+            {"id": "101", "label": "TV", "type": "Television", "controlGroup": []},
+            {"id": "102", "label": "AVR", "type": "StereoReceiver", "controlGroup": []},
+        ],
+        "activity": [
+            {"id": "-1", "label": "PowerOff", "type": "PowerOff", "roles": [], "fixit": {}},
+            {
+                "id": "500",
+                "label": "Watch TV",
+                "type": "VirtualTelevisionN",
+                "roles": {"DisplayActivityRole": "101"},
+                "fixit": fixit,
+                "controlGroup": [],
+                "rules": [],
+                "enterActions": [],
+            },
+        ],
+    }
+    assert client.put("/api/hubs/43/config", json=cfg, headers=auth(user)).status_code == 200
+    got = client.get("/api/hubs/43/config", headers=auth(user)).json()
+    ids = [a["id"] for a in got["activity"]]
+    assert ids.count("-1") == 1
+    watch = next(a for a in got["activity"] if a["id"] == "500")
+    assert watch["fixit"] == fixit
+    assert watch["roles"] == {"DisplayActivityRole": "101"}
+    assert watch["rules"] == [] and watch["enterActions"] == []

@@ -198,6 +198,10 @@ async def save_config(
     known = set(device_groups)
     activity_rows: list[Activity] = []
     for order, act in enumerate(cfg.activities):
+        # A hub's own engine?config has no ``devices`` list: the devices taking part
+        # are the keys of ``fixit``. Derive it so configs read from a hub round-trip.
+        if not act.devices and act.fixit:
+            act = act.model_copy(update={"devices": list(act.fixit)})
         unknown = [d for d in act.devices if d not in known]
         if unknown:
             raise ValueError(f"Activity {act.label!r} references unknown devices {unknown}")
@@ -311,19 +315,21 @@ async def compile_bundle(session: AsyncSession, hub: Hub) -> dict[str, Any]:
                 "sequences": json.loads(a.sequence_json),
             }
         )
-    # Every hub config has the implicit PowerOff activity with id -1.
-    activity_out.append(
-        {
-            "id": "-1",
-            "label": "PowerOff",
-            "type": "PowerOff",
-            "isAVActivity": False,
-            "activityOrder": 0,
-            "controlGroup": [],
-            "fixit": {},
-            "sequences": [],
-        }
-    )
+    # Every hub config has the implicit PowerOff activity with id -1. Configs read
+    # from a hub already contain it; add it only when missing.
+    if not any(a["id"] == "-1" for a in activity_out):
+        activity_out.append(
+            {
+                "id": "-1",
+                "label": "PowerOff",
+                "type": "PowerOff",
+                "isAVActivity": False,
+                "activityOrder": 0,
+                "controlGroup": [],
+                "fixit": {},
+                "sequences": [],
+            }
+        )
 
     return {
         "hubId": str(hub.global_remote_id),
