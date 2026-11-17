@@ -67,12 +67,16 @@ async def claim_hub(
     it ever talks to the server.
     """
     reg = _reg(request)
-    hub = await reg.get_by_remote_id(session, body.hubId) or await reg.get_by_uuid(session, body.hubId)
+    hub = await reg.get_by_remote_id(session, body.hubId) or await reg.get_by_uuid(
+        session, body.hubId
+    )
     if hub is None:
         hub = await reg.register(
-            session, hub_uuid=None if body.hubId.isdigit() else body.hubId,
+            session,
+            hub_uuid=None if body.hubId.isdigit() else body.hubId,
             global_remote_id=int(body.hubId) if body.hubId.isdigit() else None,
-            ip=body.ipAddress, name=body.hubName,
+            ip=body.ipAddress,
+            name=body.hubName,
         )
     try:
         hub = await reg.claim(session, hub, account, body.hubName)
@@ -87,9 +91,12 @@ async def claim_hub(
 
 @router.get("/{hub_id}/provision-blob")
 async def provision_blob(
-    hub: HubDep, account: AccountDep, settings: SettingsDep,
-    discovery_host: Annotated[str | None, Query(
-        description="Override hostname (repointed/rooted hubs), e.g. harmony.lan")] = None,
+    hub: HubDep,
+    account: AccountDep,
+    settings: SettingsDep,
+    discovery_host: Annotated[
+        str | None, Query(description="Override hostname (repointed/rooted hubs), e.g. harmony.lan")
+    ] = None,
 ) -> dict[str, Any]:
     """The ``account?provision`` payload to write into this hub.
 
@@ -122,8 +129,10 @@ async def provision_blob(
     }
     return {
         "hlapi": {"command": "account?provision", "params": {"provisionInfo": info}},
-        "hbus": {"cmd": "vnd.logitech.setup/vnd.logitech.account?provision",
-                 "params": {"provisionInfo": info}},
+        "hbus": {
+            "cmd": "vnd.logitech.setup/vnd.logitech.account?provision",
+            "params": {"provisionInfo": info},
+        },
     }
 
 
@@ -132,15 +141,22 @@ async def get_config(hub: HubDep, session: SessionDep) -> dict[str, Any]:
     assert hub.id is not None
     latest = await latest_config(session, hub.id)
     if latest is None:
-        return {"hubId": str(hub.global_remote_id), "configVersion": 0, "contentVersion": 0,
-                "activity": [], "device": []}
+        return {
+            "hubId": str(hub.global_remote_id),
+            "configVersion": 0,
+            "contentVersion": 0,
+            "activity": [],
+            "device": [],
+        }
     payload: dict[str, Any] = json.loads(latest.payload_json)
     return payload
 
 
 @router.put("/{hub_id}/config")
 async def put_config(
-    hub: HubDep, body: HubConfigIn, session: SessionDep,
+    hub: HubDep,
+    body: HubConfigIn,
+    session: SessionDep,
     device_db: Annotated[DeviceDB, Depends(get_device_db)],
     notify_hub: Annotated[bool, Query(description="Send setup.sync to the hub")] = False,
 ) -> dict[str, Any]:
@@ -148,8 +164,11 @@ async def put_config(
         row = await save_config(session, hub, body, device_db)
     except ValueError as exc:
         raise HTTPException(422, str(exc)) from exc
-    result: dict[str, Any] = {"configVersion": row.config_version,
-                              "contentVersion": row.content_version, "hubNotified": False}
+    result: dict[str, Any] = {
+        "configVersion": row.config_version,
+        "contentVersion": row.content_version,
+        "hubNotified": False,
+    }
     if notify_hub and hub.ip_address:
         try:
             result["hubNotified"] = await hub_client.sync(hub.ip_address)
@@ -175,7 +194,9 @@ async def get_status(hub: HubDep, session: SessionDep) -> HubStatus:
     assert hub.id is not None
     latest = await latest_config(session, hub.id)
     st = HubStatus(
-        hubId=str(hub.global_remote_id), online=False, ipAddress=hub.ip_address,
+        hubId=str(hub.global_remote_id),
+        online=False,
+        ipAddress=hub.ip_address,
         serverConfigVersion=latest.config_version if latest else None,
         hubSwVersion=hub.hub_sw_version,
     )
@@ -211,11 +232,11 @@ async def activity(hub: HubDep, body: ActivityAction) -> dict[str, Any]:
 async def command(hub: HubDep, body: CommandRequest) -> dict[str, Any]:
     ip = _need_ip(hub)
     try:
-        errors = await hub_client.send_command(ip, body.deviceId, body.command, body.delay, body.repeat)
+        errors = await hub_client.send_command(
+            ip, body.deviceId, body.command, body.delay, body.repeat
+        )
     except hub_client.HubUnreachable as exc:
         raise HTTPException(503, str(exc)) from exc
     except ValueError as exc:
         raise HTTPException(422, f"deviceId must be numeric: {exc}") from exc
     return {"ok": not errors, "errors": errors}
-
-

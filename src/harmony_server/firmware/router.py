@@ -34,8 +34,11 @@ def no_update(current: str | None = None) -> dict[str, Any]:
 )
 async def sus_info(product_id: str, unit_id: str, request: Request) -> dict[str, Any]:
     # TODO: validate against captured packet.
-    return {"productId": product_id, "unitId": unit_id,
-            **no_update(request.query_params.get("version"))}
+    return {
+        "productId": product_id,
+        "unitId": unit_id,
+        **no_update(request.query_params.get("version")),
+    }
 
 
 @api_router.get("/check")

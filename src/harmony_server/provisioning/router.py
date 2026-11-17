@@ -77,7 +77,9 @@ def build_hbus_router() -> APIRouter:
     router = APIRouter(tags=["legacy: provisioning"])
 
     @router.post("/")
-    async def hbus_dispatch(request: Request, session: SessionDep, settings: SettingsDep) -> JSONResponse:
+    async def hbus_dispatch(
+        request: Request, session: SessionDep, settings: SettingsDep
+    ) -> JSONResponse:
         req = HbusRequest.parse(await _read_json(request))
         obj, verb, inline = req.command()
         params = {**req.params, **inline}
@@ -86,11 +88,19 @@ def build_hbus_router() -> APIRouter:
         auth = request.headers.get("authorization") or request.headers.get("x-harmony-cloud-auth")
 
         hub = await reg.identify(
-            session, params=params, auth_header=auth, client_ip=client_ip,
+            session,
+            params=params,
+            auth_header=auth,
+            client_ip=client_ip,
             explicit_hub_id=req.hub_id or request.query_params.get("hubId"),
         )
 
         if obj == "account" and verb in ("getProvisionInfo", "getGlobalRemote", "isProvisioned"):
+            # The cloud token is a secret: only hand it to a caller that presented it,
+            # or to the caller that caused this hub record to be created just now.
+            proven = False
+            if hub is not None and auth:
+                proven = reg.parse_cloud_auth(auth)[2] == hub.cloud_token
             if hub is None:
                 if not settings.auto_register_hubs:
                     return JSONResponse(hbus_response(req, 404, "Unknown hub", None), 200)
@@ -101,24 +111,37 @@ def build_hbus_router() -> APIRouter:
                     sw_version=params.get("hubSwVersion"),
                 )
                 log.info("Auto-registered hub %s from %s", hub.global_remote_id, client_ip)
+                proven = True
             await reg.touch(session, hub, client_ip, params)
             pdata = await reg.provision_data(session, hub, settings)
+            if not proven:
+                pdata.cloudAuth = pdata.token = None
             if verb == "getProvisionInfo":
                 return JSONResponse(hbus_response(req, 200, "OK", pdata.model_dump()))
             if verb == "getGlobalRemote":
                 return JSONResponse(
-                    hbus_response(req, 200, "OK", {
-                        "globalRemoteId": pdata.globalRemoteId,
-                        "activeRemoteId": pdata.activeRemoteId,
-                        "accountId": pdata.accountId,
-                        "friendlyName": hub.friendly_name,
-                    })
+                    hbus_response(
+                        req,
+                        200,
+                        "OK",
+                        {
+                            "globalRemoteId": pdata.globalRemoteId,
+                            "activeRemoteId": pdata.activeRemoteId,
+                            "accountId": pdata.accountId,
+                            "friendlyName": hub.friendly_name,
+                        },
+                    )
                 )
             return JSONResponse(
-                hbus_response(req, 200, "OK", {
-                    "ProvisionStatus": str(hub.account_id is not None).lower(),
-                    "ProvisionedEmail": pdata.email,
-                })
+                hbus_response(
+                    req,
+                    200,
+                    "OK",
+                    {
+                        "ProvisionStatus": str(hub.account_id is not None).lower(),
+                        "ProvisionedEmail": pdata.email,
+                    },
+                )
             )
 
         if obj == "account" and verb == "provision":
@@ -133,7 +156,9 @@ def build_hbus_router() -> APIRouter:
             if account_id is None:
                 return JSONResponse(hbus_response(req, 401, "Invalid authToken", None))
             if info.accountId and info.accountId != str(account_id):
-                return JSONResponse(hbus_response(req, 403, "accountId does not match authToken", None))
+                return JSONResponse(
+                    hbus_response(req, 403, "accountId does not match authToken", None)
+                )
             account = await session.get(Account, account_id)
             if account is None:
                 return JSONResponse(hbus_response(req, 401, "Unknown account", None))
@@ -164,7 +189,9 @@ def build_wcf_router() -> APIRouter:
     uad = "/UserAccountDirectorPlatform/UserAccountDirector.svc/json2"
     rm = "/RemotePlatform/RemoteManager.svc/json2"
 
-    async def _account_from_request(request: Request, body: dict[str, Any], settings: SettingsDep) -> int | None:
+    async def _account_from_request(
+        request: Request, body: dict[str, Any], settings: SettingsDep
+    ) -> int | None:
         token = (request.headers.get("authorization") or "").removeprefix("Bearer ").strip()
         token = token or str(body.get("userAuthToken") or body.get("authToken") or "")
         return (
@@ -177,14 +204,18 @@ def build_wcf_router() -> APIRouter:
             if isinstance(v, dict):
                 flat.update(v)
         return await _registry(request).identify(
-            session, params=flat, auth_header=request.headers.get("authorization"),
+            session,
+            params=flat,
+            auth_header=request.headers.get("authorization"),
             client_ip=request.client.host if request.client else None,
         )
 
     @router.post(f"{uad}/ProvisionHub")
     @router.post(f"{uad}/AddHubToAccount")
     @router.post(f"{rm}/AddHubToAccount")
-    async def provision_hub(request: Request, session: SessionDep, settings: SettingsDep) -> JSONResponse:
+    async def provision_hub(
+        request: Request, session: SessionDep, settings: SettingsDep
+    ) -> JSONResponse:
         # Contract: ProvisionHub(RemoteInfo, unitCertificate, PairingInfo[], ClientInfo)
         #        -> ProvisionHubResponse { HubCloudToken: string, HubId: long }
         body = await _read_json(request)
@@ -194,7 +225,8 @@ def build_wcf_router() -> APIRouter:
         if hub is None:
             cert = body.get("unitCertificate")
             hub = await reg.register(
-                session, hub_uuid=str(cert) if cert else None,
+                session,
+                hub_uuid=str(cert) if cert else None,
                 ip=request.client.host if request.client else None,
             )
         if account_id is not None:
@@ -221,13 +253,15 @@ def build_wcf_router() -> APIRouter:
         hub = await _find_hub(request, session, body)
         if hub is None:
             return JSONResponse({"error": "unknown hub"}, 404)
-        return JSONResponse({
-            "Id": hub.global_remote_id,
-            "GlobalRemoteId": hub.global_remote_id,
-            "AccountId": hub.account_id,
-            "SerialNumber": hub.hub_uuid,
-            "Name": hub.friendly_name,
-        })
+        return JSONResponse(
+            {
+                "Id": hub.global_remote_id,
+                "GlobalRemoteId": hub.global_remote_id,
+                "AccountId": hub.account_id,
+                "SerialNumber": hub.hub_uuid,
+                "Name": hub.friendly_name,
+            }
+        )
 
     @router.post(f"{rm}/RegisterSuccessfulSync")
     @router.post(f"{uad}/Account/{{account_id}}/Remote/{{remote_id}}/RegisterSuccessfulSync")

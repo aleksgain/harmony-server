@@ -1,177 +1,188 @@
-"""Harmony Revival — self-hosted MyHarmony cloud backend.
-
-Start with:
-    harmony-server          # uses config from .env / environment
-    uvicorn harmony_server.main:app --host 0.0.0.0 --port 8080
-
-The server answers for all Logitech hostnames via vhost routing middleware so
-that a DNS-rewrite deployment (*.myharmony.com → this server) works without any
-client changes.  It also exposes a harmony-revival-native REST API under /api/
-used by the new Electron client.
-"""
+"""App factory, lifespan and the ``harmony-server`` CLI."""
 
 from __future__ import annotations
 
+import argparse
+import asyncio
 import logging
-import os
-import sys
+from collections.abc import AsyncIterator
 from contextlib import asynccontextmanager
-from pathlib import Path
 from typing import Any
 
-import click
 import uvicorn
-from fastapi import FastAPI, Request
-from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import JSONResponse
+from fastapi import APIRouter, FastAPI
+from fastapi.staticfiles import StaticFiles
 
+from harmony_server import __version__
+from harmony_server.auth import legacy_router as auth_legacy
+from harmony_server.auth.router import router as auth_router
 from harmony_server.config import Settings, get_settings
-from harmony_server.db.database import Database
+from harmony_server.db import Database
+from harmony_server.device_db.router import router as device_db_router
 from harmony_server.device_db.store import DeviceDB
-from harmony_server.middleware.capture import CaptureUnknownMiddleware
-from harmony_server.middleware.hostname_routing import HostnameRoutingMiddleware
+from harmony_server.discovery import router as discovery
+from harmony_server.firmware import router as firmware
+from harmony_server.hub import legacy_router as hub_legacy
+from harmony_server.hub.router import router as hub_router
+from harmony_server.middleware.hostname_routing import VHOST_PREFIX, HostnameRoutingMiddleware
+from harmony_server.middleware.proxy import ProxyMiddleware
+from harmony_server.middleware.tls_intercept import ensure_certificates
+from harmony_server.provisioning import router as provisioning
+from harmony_server.provisioning.hub_registry import HubRegistry
+from harmony_server.telemetry.router import router as telemetry_router
+from harmony_server.web import router as web
 
-log = logging.getLogger(__name__)
-
-# ---------------------------------------------------------------------------
-# App factory
-# ---------------------------------------------------------------------------
+log = logging.getLogger("harmony_server")
 
 
-@asynccontextmanager
-async def lifespan(app: FastAPI):  # type: ignore[type-arg]
-    settings: Settings = app.state.settings
-
-    # -- Database ----------------------------------------------------------------
-    db = Database(settings.resolved_db_path)
-    await db.init()
-    app.state.db = db
-
-    # -- Device DB ---------------------------------------------------------------
-    device_db = DeviceDB(settings.device_db_path)
-    await device_db.init()
-    app.state.device_db = device_db
-
-    log.info("Harmony server ready on http://%s:%d", settings.bind_host, settings.http_port)
-    yield
-
-    # -- Cleanup -----------------------------------------------------------------
-    await db.dispose()
+def _vhost(name: str, *routers: APIRouter) -> APIRouter:
+    r = APIRouter(prefix=f"{VHOST_PREFIX}/{name}")
+    for sub in routers:
+        r.include_router(sub)
+    return r
 
 
 def create_app(settings: Settings | None = None) -> FastAPI:
-    if settings is None:
-        settings = get_settings()
+    settings = settings or get_settings()
+
+    @asynccontextmanager
+    async def lifespan(app: FastAPI) -> AsyncIterator[None]:
+        settings.data_dir.mkdir(parents=True, exist_ok=True)
+        db = Database(settings.resolved_db_path)
+        await db.init()
+        store = DeviceDB(settings.device_db_path)
+        await store.load()
+        app.state.db = db
+        app.state.device_db = store
+        if settings.secret_key == "change-me-in-production":
+            log.warning("HARMONY_SECRET_KEY is the default - set a real secret!")
+        log.info("harmony-server %s started in %s mode", __version__, settings.server_mode)
+        try:
+            yield
+        finally:
+            await db.dispose()
 
     app = FastAPI(
-        title="Harmony Revival Server",
-        description="Self-hosted replacement for Logitech's MyHarmony cloud (svcs/setup.myharmony.com).",
-        version="0.1.0",
+        title="harmony-server",
+        version=__version__,
+        description="Self-hosted MyHarmony cloud replacement (Harmony Revival).",
         lifespan=lifespan,
-        docs_url="/api/docs",
-        redoc_url="/api/redoc",
-        openapi_url="/api/openapi.json",
     )
     app.state.settings = settings
+    app.state.registry = HubRegistry()
 
-    # -- CORS (Electron renderer hits /api/* directly) ---------------------------
-    app.add_middleware(
-        CORSMiddleware,
-        allow_origins=["*"],
-        allow_credentials=True,
-        allow_methods=["*"],
-        allow_headers=["*"],
-    )
-
-    # -- Request capture (record unknown endpoints for reverse engineering) -------
-    if settings.capture_unknown_requests:
-        app.add_middleware(
-            CaptureUnknownMiddleware,
-            capture_dir=settings.resolved_capture_dir,
-            redact_headers=set(settings.capture_redact_headers),
-        )
-
-    # -- Vhost routing (must be outermost) ---------------------------------------
-    app.add_middleware(HostnameRoutingMiddleware, vhosts=settings.vhosts)
-
-    # -- Routers -----------------------------------------------------------------
-    _mount_routers(app)
-
-    # -- Generic 404 for Logitech endpoints we haven't implemented yet -----------
-    @app.exception_handler(404)
-    async def not_found(_request: Request, _exc: Any) -> JSONResponse:
-        return JSONResponse(
-            {"errorCode": "404", "errorMessage": "Not implemented in Harmony Revival"},
-            status_code=404,
-        )
-
-    return app
-
-
-def _mount_routers(app: FastAPI) -> None:
-    from harmony_server.auth.router import router as auth_router
-    from harmony_server.device_db.router import router as device_db_router
-    from harmony_server.discovery.router import router as discovery_router
-    from harmony_server.firmware.router import router as firmware_router
-    from harmony_server.hub.router import router as hub_router
-    from harmony_server.provisioning.router import router as provisioning_router
-    from harmony_server.telemetry.router import router as telemetry_router
-    from harmony_server.web.router import router as web_router
-
-    # Harmony Revival native REST API (new Electron client)
+    # New-client API (all hosts)
     app.include_router(auth_router)
     app.include_router(hub_router)
     app.include_router(device_db_router)
+    app.include_router(firmware.api_router)
+    app.include_router(web.root_router)
 
-    # Logitech-compatible endpoints (legacy Silverlight client via DNS rewrite)
-    app.include_router(provisioning_router)
-    app.include_router(discovery_router)
-    app.include_router(firmware_router)
-    app.include_router(telemetry_router)
-    app.include_router(web_router)
+    # Logitech vhosts
+    hbus = provisioning.build_hbus_router()
+    app.include_router(
+        _vhost(
+            "svcs",
+            hbus,
+            provisioning.build_wcf_router(),
+            discovery.build_router(),
+            auth_legacy.build_security_router(),
+            hub_legacy.build_router(),
+        )
+    )
+    app.include_router(_vhost("setup", hbus))
+    app.include_router(_vhost("sl", web.sl_router))
+    app.include_router(_vhost("content", web.content_router))
+    app.include_router(_vhost("sus", firmware.vhost_router))
+    app.include_router(_vhost("telemetry", telemetry_router))
+    app.include_router(_vhost("logi", auth_legacy.build_logi_router()))
+    app.include_router(web.fallback_router)  # must be last
+
+    app.mount(
+        "/device-db",
+        StaticFiles(directory=settings.device_db_path, html=True, check_dir=False),
+        name="device-db",
+    )
+
+    app.add_middleware(HostnameRoutingMiddleware, vhosts=settings.vhosts)
+    if settings.server_mode == "proxy":
+        # Outermost: relays Logitech hosts before vhost routing sees them.
+        app.add_middleware(ProxyMiddleware, settings=settings)
+    return app
 
 
-# Singleton app for uvicorn / ASGI servers
-app = create_app()
+async def _serve(settings: Settings, log_level: str) -> None:
+    app = create_app(settings)
+    servers = [
+        uvicorn.Server(
+            uvicorn.Config(
+                app,
+                host=settings.bind_host,
+                port=settings.http_port,
+                log_level=log_level,
+                proxy_headers=False,
+                lifespan="on",
+            )
+        )
+    ]
+    if settings.enable_tls:
+        paths = ensure_certificates(
+            settings.resolved_cert_dir, settings.all_hostnames() + settings.cert_extra_names
+        )
+        servers.append(
+            uvicorn.Server(
+                uvicorn.Config(
+                    app,
+                    host=settings.bind_host,
+                    port=settings.https_port,
+                    log_level=log_level,
+                    ssl_certfile=str(paths.server_cert),
+                    ssl_keyfile=str(paths.server_key),
+                    # Lifespan runs once (on the HTTP server); both share app.state.
+                    lifespan="off",
+                )
+            )
+        )
+        log.info("TLS on :%d - trust %s on clients", settings.https_port, paths.ca_cert)
+    await asyncio.gather(*(s.serve() for s in servers))
 
 
-# ---------------------------------------------------------------------------
-# CLI entry point
-# ---------------------------------------------------------------------------
-
-
-@click.command()
-@click.option("--host", default=None, help="Override bind host (HARMONY_BIND_HOST)")
-@click.option("--port", default=None, type=int, help="Override HTTP port (HARMONY_HTTP_PORT)")
-@click.option("--reload", is_flag=True, default=False, help="Enable auto-reload (dev only)")
-@click.option("--log-level", default="info", type=click.Choice(["debug", "info", "warning", "error"]))
-def cli(host: str | None, port: int | None, reload: bool, log_level: str) -> None:
-    """Start the Harmony Revival server."""
-    settings = get_settings()
-
-    # Env overrides from CLI flags
-    if host:
-        os.environ["HARMONY_BIND_HOST"] = host
-    if port:
-        os.environ["HARMONY_HTTP_PORT"] = str(port)
-
-    effective_host = host or settings.bind_host
-    effective_port = port or settings.http_port
+def cli() -> None:
+    parser = argparse.ArgumentParser(prog="harmony-server", description=__doc__)
+    parser.add_argument("--host", help="bind address")
+    parser.add_argument("--http-port", type=int)
+    parser.add_argument("--https-port", type=int)
+    parser.add_argument("--no-tls", action="store_true", help="HTTP only")
+    parser.add_argument("--mode", choices=["standalone", "proxy"])
+    parser.add_argument("--gen-certs", action="store_true", help="(re)generate certs and exit")
+    parser.add_argument("--log-level", default="info")
+    args = parser.parse_args()
 
     logging.basicConfig(
-        level=log_level.upper(),
-        format="%(asctime)s %(levelname)-8s %(name)s  %(message)s",
+        level=args.log_level.upper(), format="%(asctime)s %(levelname)s %(name)s: %(message)s"
     )
-    log.info("Starting Harmony Revival server %s:%d", effective_host, effective_port)
+    overrides: dict[str, Any] = {}
+    if args.host:
+        overrides["bind_host"] = args.host
+    if args.http_port:
+        overrides["http_port"] = args.http_port
+    if args.https_port:
+        overrides["https_port"] = args.https_port
+    if args.no_tls:
+        overrides["enable_tls"] = False
+    if args.mode:
+        overrides["server_mode"] = args.mode
+    settings = Settings(**overrides) if overrides else get_settings()
 
-    uvicorn.run(
-        "harmony_server.main:app",
-        host=effective_host,
-        port=effective_port,
-        reload=reload,
-        log_level=log_level,
-        # In production add ssl_keyfile/ssl_certfile for TLS
-    )
+    if args.gen_certs:
+        paths = ensure_certificates(
+            settings.resolved_cert_dir,
+            settings.all_hostnames() + settings.cert_extra_names,
+            force=True,
+        )
+        print(f"CA: {paths.ca_cert}\nServer cert: {paths.server_cert}")
+        return
+    asyncio.run(_serve(settings, args.log_level))
 
 
 if __name__ == "__main__":

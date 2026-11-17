@@ -91,9 +91,15 @@ def ensure_certificates(cert_dir: Path, hostnames: list[str], force: bool = Fals
             .add_extension(x509.BasicConstraints(ca=True, path_length=0), critical=True)
             .add_extension(
                 x509.KeyUsage(
-                    digital_signature=True, key_cert_sign=True, crl_sign=True,
-                    content_commitment=False, key_encipherment=False, data_encipherment=False,
-                    key_agreement=False, encipher_only=False, decipher_only=False,
+                    digital_signature=True,
+                    key_cert_sign=True,
+                    crl_sign=True,
+                    content_commitment=False,
+                    key_encipherment=False,
+                    data_encipherment=False,
+                    key_agreement=False,
+                    encipher_only=False,
+                    decipher_only=False,
                 ),
                 critical=True,
             )

@@ -137,10 +137,13 @@ async def _json_body(request: Request) -> dict[str, Any]:
     return data if isinstance(data, dict) else {"value": data}
 
 
-async def _hub_for(request: Request, session: SessionDep, sync_req: ConfigSyncRequest, body: dict[str, Any]) -> Hub | None:
+async def _hub_for(
+    request: Request, session: SessionDep, sync_req: ConfigSyncRequest, body: dict[str, Any]
+) -> Hub | None:
     reg: HubRegistry = request.app.state.registry
     return await reg.identify(
-        session, params={**body, **({"hubId": sync_req.hubId} if sync_req.hubId else {})},
+        session,
+        params={**body, **({"hubId": sync_req.hubId} if sync_req.hubId else {})},
         auth_header=request.headers.get("authorization"),
         client_ip=request.client.host if request.client else None,
     )
@@ -164,16 +167,38 @@ async def config_sync(request: Request, session: SessionDep, body: dict[str, Any
     decision = sync_decision(latest, sync_req.configVersion, sync_req.contentVersion)
     base = {"hubId": str(hub.global_remote_id), "syncRequired": decision == "update"}
     if decision == "none":
-        return JSONResponse({"code": 200, "msg": "No config stored",
-                             "data": {**base, "configVersion": 0, "contentVersion": 0}})
+        return JSONResponse(
+            {
+                "code": 200,
+                "msg": "No config stored",
+                "data": {**base, "configVersion": 0, "contentVersion": 0},
+            }
+        )
     assert latest is not None
     if decision == "current":
-        return JSONResponse({"code": 200, "msg": "Config is current", "data": {
-            **base, "configVersion": latest.config_version,
-            "contentVersion": latest.content_version}})
-    return JSONResponse({"code": 200, "msg": "OK", "data": {
-        **base, "configVersion": latest.config_version,
-        "contentVersion": latest.content_version, "config": json.loads(latest.payload_json)}})
+        return JSONResponse(
+            {
+                "code": 200,
+                "msg": "Config is current",
+                "data": {
+                    **base,
+                    "configVersion": latest.config_version,
+                    "contentVersion": latest.content_version,
+                },
+            }
+        )
+    return JSONResponse(
+        {
+            "code": 200,
+            "msg": "OK",
+            "data": {
+                **base,
+                "configVersion": latest.config_version,
+                "contentVersion": latest.content_version,
+                "config": json.loads(latest.payload_json),
+            },
+        }
+    )
 
 
 def build_router() -> APIRouter:
@@ -184,16 +209,24 @@ def build_router() -> APIRouter:
     async def discovery_get() -> Response:
         return Response(
             "<html><body>Discovery service (harmony-server). POST SOAP 1.1 "
-            "(IDiscovery) or JSON.</body></html>", media_type="text/html")
+            "(IDiscovery) or JSON.</body></html>",
+            media_type="text/html",
+        )
 
     @router.post("/Discovery/Discovery.svc")
     @router.post("/Discovery/Discovery.svc/basic")
-    async def discovery_post(request: Request, session: SessionDep, settings: SettingsDep) -> Response:
+    async def discovery_post(
+        request: Request, session: SessionDep, settings: SettingsDep
+    ) -> Response:
         body = await request.body()
         if settings.capture_unknown_requests:
             # Every real Discovery call is evidence (clientTypeId of the hub is unknown).
-            await capture_request(request, settings.resolved_capture_dir,
-                                  settings.capture_redact_headers, note="discovery")
+            await capture_request(
+                request,
+                settings.resolved_capture_dir,
+                settings.capture_redact_headers,
+                note="discovery",
+            )
         ctype = request.headers.get("content-type", "")
         soap_action = request.headers.get("soapaction")
         if soap_action is not None or "xml" in ctype or body.lstrip()[:1] == b"<":
@@ -202,8 +235,12 @@ def build_router() -> APIRouter:
             op, args = parse_soap(body, soap_action)
             if op not in OPERATIONS:
                 return _soap_fault(f"Unknown operation {op!r}")
-            log.info("Discovery.%s clientTypeId=%r clientId=%r", op,
-                     args.get("clientTypeId"), args.get("clientId"))
+            log.info(
+                "Discovery.%s clientTypeId=%r clientId=%r",
+                op,
+                args.get("clientTypeId"),
+                args.get("clientId"),
+            )
             xml = soap_response(op, service_directory(settings.service_url_rewrites))
             return Response(xml, media_type="text/xml; charset=utf-8")
         return await config_sync(request, session, await _json_body(request))
@@ -230,13 +267,19 @@ def build_router() -> APIRouter:
         if hub is None or hub.id is None:
             return JSONResponse({"error": "unknown hub"}, 404)
         latest = await latest_config(session, hub.id)
-        reported = sync_req.configVersion if sync_req.configVersion is not None else hub.synced_config_version
+        reported = (
+            sync_req.configVersion
+            if sync_req.configVersion is not None
+            else hub.synced_config_version
+        )
         return JSONResponse(sync_decision(latest, reported, None) == "update")
 
     @router.post(f"{cm}/StartCompile")
     @router.post(f"{cm}/StartCompileWithLocale")
     @router.post(f"{cm}/StartCompileWithLocaleAndSettings")
-    async def start_compile(request: Request, session: SessionDep, settings: SettingsDep) -> JSONResponse:
+    async def start_compile(
+        request: Request, session: SessionDep, settings: SettingsDep
+    ) -> JSONResponse:
         """Contract returns ``CompileRequest{DownloadUrl, SimulationDownloadUrl, ApproximateSize}``.
 
         TODO: validate against captured packet. We do not compile anything new here - the
@@ -250,20 +293,29 @@ def build_router() -> APIRouter:
         latest = await latest_config(session, hub.id)
         if latest is None:
             return JSONResponse({"error": "no config stored for hub"}, 409)
-        url = (f"https://svcs.myharmony.com/SyncPlatform/compiled/"
-               f"{hub.global_remote_id}/{latest.config_version}.json")
+        url = (
+            f"https://svcs.myharmony.com/SyncPlatform/compiled/"
+            f"{hub.global_remote_id}/{latest.config_version}.json"
+        )
         for old, new in settings.service_url_rewrites.items():
             url = url.replace(old, new)
-        return JSONResponse({"DownloadUrl": url, "SimulationDownloadUrl": url,
-                             "ApproximateSize": len(latest.payload_json),
-                             "ConfigVersion": latest.config_version})
+        return JSONResponse(
+            {
+                "DownloadUrl": url,
+                "SimulationDownloadUrl": url,
+                "ApproximateSize": len(latest.payload_json),
+                "ConfigVersion": latest.config_version,
+            }
+        )
 
     @router.post(f"{cm}/GetConnectedRemoteConfig")
     async def connected_remote_config(request: Request, session: SessionDep) -> JSONResponse:
         return await config_sync(request, session, await _json_body(request))
 
     @router.get("/SyncPlatform/compiled/{remote_id}/{version}.json")
-    async def download_bundle(request: Request, remote_id: str, version: int, session: SessionDep) -> Response:
+    async def download_bundle(
+        request: Request, remote_id: str, version: int, session: SessionDep
+    ) -> Response:
         from sqlmodel import select
 
         from harmony_server.db import HarmonyConfig
@@ -272,12 +324,15 @@ def build_router() -> APIRouter:
         hub = await reg.get_by_remote_id(session, remote_id)
         if hub is None:
             raise HTTPException(404, "Unknown hub")
-        row = (await session.exec(select(HarmonyConfig).where(
-            HarmonyConfig.hub_id == hub.id, HarmonyConfig.config_version == version))).first()
+        row = (
+            await session.exec(
+                select(HarmonyConfig).where(
+                    HarmonyConfig.hub_id == hub.id, HarmonyConfig.config_version == version
+                )
+            )
+        ).first()
         if row is None:
             raise HTTPException(404, "Unknown config version")
         return Response(row.payload_json, media_type="application/json")
 
     return router
-
-

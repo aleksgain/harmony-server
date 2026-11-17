@@ -105,8 +105,9 @@ class ProvisionData(BaseModel):
     email: str | None = None
     username: str | None = None
     language: str = "en-US"
-    cloudAuth: str
-    token: str
+    #: Only returned to a caller that already proved it is the hub (or just registered it).
+    cloudAuth: str | None = None
+    token: str | None = None
 
 
 class ClaimRequest(BaseModel):

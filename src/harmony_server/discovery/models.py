@@ -47,7 +47,9 @@ class ConfigSyncRequest(BaseModel):
                 return None
 
         return cls(
-            hubId=None if (h := pick("hubId", "remoteId", "globalRemoteId", "activeRemoteId")) is None else str(h),
+            hubId=None
+            if (h := pick("hubId", "remoteId", "globalRemoteId", "activeRemoteId")) is None
+            else str(h),
             configVersion=as_int(pick("configVersion")),
             contentVersion=as_int(pick("contentVersion")),
         )

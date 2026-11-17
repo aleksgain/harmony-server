@@ -182,7 +182,9 @@ class HubRegistry:
         return list((await session.exec(select(Hub).where(Hub.account_id == account_id))).all())
 
     # ---------------------------------------------------------------- views
-    async def provision_data(self, session: AsyncSession, hub: Hub, settings: Settings) -> ProvisionData:
+    async def provision_data(
+        self, session: AsyncSession, hub: Hub, settings: Settings
+    ) -> ProvisionData:
         email = None
         if hub.account_id is not None:
             acct = await session.get(Account, hub.account_id)

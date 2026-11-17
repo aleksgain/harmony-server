@@ -70,7 +70,9 @@ class DeviceDB:
         self.available = True
         log.info(
             "Device DB loaded: %d manufacturers, %d protocols (generated %s)",
-            len(self.manufacturers), len(self.protocols), self.manifest.get("generated"),
+            len(self.manufacturers),
+            len(self.protocols),
+            self.manifest.get("generated"),
         )
 
     def _require(self) -> None:
@@ -116,7 +118,9 @@ class DeviceDB:
             self._model_index_cache[slug] = entries
         return self._model_index_cache[slug]
 
-    async def device(self, manufacturer: str, model: str, inline_codeset: bool = True) -> dict[str, Any] | None:
+    async def device(
+        self, manufacturer: str, model: str, inline_codeset: bool = True
+    ) -> dict[str, Any] | None:
         entries = await self.models(manufacturer)
         if not entries:
             return None
@@ -136,9 +140,7 @@ class DeviceDB:
                 match = e
                 break
         if match is None:
-            match = next(
-                (e for e in entries if (e.get("m") or "").strip().lower() == want_l), None
-            )
+            match = next((e for e in entries if (e.get("m") or "").strip().lower() == want_l), None)
         if match is None:
             return None
         record: dict[str, Any] = await _read_json(self.root / "devices" / mfr["s"] / match["f"])

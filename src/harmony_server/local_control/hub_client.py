@@ -25,10 +25,10 @@ class HubUnreachable(RuntimeError):
 
 
 @asynccontextmanager
-async def connect(ip: str, timeout: float = CONNECT_TIMEOUT) -> AsyncIterator[HarmonyAPI]:
+async def connect(ip: str, connect_timeout: float = CONNECT_TIMEOUT) -> AsyncIterator[HarmonyAPI]:
     api = HarmonyAPI(ip_address=ip)
     try:
-        ok = await asyncio.wait_for(api.connect(), timeout)
+        ok = await asyncio.wait_for(api.connect(), connect_timeout)
     except (TimeoutError, OSError) as exc:
         raise HubUnreachable(f"Cannot connect to hub at {ip}: {exc}") from exc
     if not ok:
@@ -69,7 +69,9 @@ async def start_activity(ip: str, activity_id: str) -> tuple[bool, str | None]:
         return bool(ok), msg
 
 
-async def send_command(ip: str, device_id: str, command: str, delay: float, repeat: int) -> list[str]:
+async def send_command(
+    ip: str, device_id: str, command: str, delay: float, repeat: int
+) -> list[str]:
     async with connect(ip) as api:
         cmds: list[Any] = [
             SendCommandDevice(device=int(device_id), command=command, delay=delay)

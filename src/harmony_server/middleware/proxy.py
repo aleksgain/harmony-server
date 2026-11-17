@@ -25,6 +25,7 @@ from pathlib import Path
 from typing import Any
 
 import aiofiles
+import aiofiles.os
 import httpx
 from starlette.types import ASGIApp, Message, Receive, Scope, Send
 
@@ -34,8 +35,16 @@ from harmony_server.middleware.hostname_routing import SHARED_PREFIXES, normalis
 log = logging.getLogger(__name__)
 
 HOP_BY_HOP = {
-    "connection", "keep-alive", "proxy-authenticate", "proxy-authorization", "te",
-    "trailers", "transfer-encoding", "upgrade", "content-length", "content-encoding",
+    "connection",
+    "keep-alive",
+    "proxy-authenticate",
+    "proxy-authorization",
+    "te",
+    "trailers",
+    "transfer-encoding",
+    "upgrade",
+    "content-length",
+    "content-encoding",
 }
 MAX_CAPTURE = 2 * 1024 * 1024
 
@@ -74,8 +83,15 @@ class ProxyMiddleware:
             return
         await self._relay(scope, receive, send, host, vhost, headers)
 
-    async def _relay(self, scope: Scope, receive: Receive, send: Send, host: str, vhost: str,
-                     headers: dict[str, str]) -> None:
+    async def _relay(
+        self,
+        scope: Scope,
+        receive: Receive,
+        send: Send,
+        host: str,
+        vhost: str,
+        headers: dict[str, str],
+    ) -> None:
         body = b""
         while True:
             msg: Message = await receive()
@@ -93,26 +109,56 @@ class ProxyMiddleware:
         started = time.monotonic()
         try:
             resp = await self._client.request(
-                scope["method"], url, headers=fwd, content=body,
+                scope["method"],
+                url,
+                headers=fwd,
+                content=body,
                 extensions={"sni_hostname": host} if ip else None,
             )
             status, resp_headers, resp_body = resp.status_code, resp.headers, resp.content
             error = None
         except httpx.HTTPError as exc:
-            status, resp_headers, resp_body, error = 502, httpx.Headers(), b"upstream error", str(exc)
+            status, resp_headers, resp_body, error = (
+                502,
+                httpx.Headers(),
+                b"upstream error",
+                str(exc),
+            )
             log.warning("Proxy %s %s failed: %s", scope["method"], url, exc)
-        await self._record(vhost, host, scope, target, headers, body, status, resp_headers,
-                           resp_body, error, time.monotonic() - started)
-        out_headers = [(k.encode(), v.encode()) for k, v in resp_headers.items()
-                       if k.lower() not in HOP_BY_HOP]
+        await self._record(
+            vhost,
+            host,
+            scope,
+            target,
+            headers,
+            body,
+            status,
+            resp_headers,
+            resp_body,
+            error,
+            time.monotonic() - started,
+        )
+        out_headers = [
+            (k.encode(), v.encode()) for k, v in resp_headers.items() if k.lower() not in HOP_BY_HOP
+        ]
         out_headers.append((b"content-length", str(len(resp_body)).encode()))
         await send({"type": "http.response.start", "status": status, "headers": out_headers})
         await send({"type": "http.response.body", "body": resp_body})
 
-    async def _record(self, vhost: str, host: str, scope: Scope, target: str,
-                      req_headers: dict[str, str], req_body: bytes, status: int,
-                      resp_headers: httpx.Headers, resp_body: bytes, error: str | None,
-                      elapsed: float) -> None:
+    async def _record(
+        self,
+        vhost: str,
+        host: str,
+        scope: Scope,
+        target: str,
+        req_headers: dict[str, str],
+        req_body: bytes,
+        status: int,
+        resp_headers: httpx.Headers,
+        resp_body: bytes,
+        error: str | None,
+        elapsed: float,
+    ) -> None:
         redact = {h.lower() for h in self.settings.capture_redact_headers}
 
         def clean(h: dict[str, str]) -> dict[str, str]:
@@ -121,13 +167,22 @@ class ProxyMiddleware:
         record = {
             "ts": datetime.now(UTC).isoformat(),
             "client": (scope.get("client") or [None])[0],
-            "request": {"method": scope["method"], "host": host, "target": target,
-                        "headers": clean(req_headers), "body": _encode_body(req_body)},
-            "response": {"status": status, "headers": clean(dict(resp_headers)),
-                         "body": _encode_body(resp_body), "error": error},
+            "request": {
+                "method": scope["method"],
+                "host": host,
+                "target": target,
+                "headers": clean(req_headers),
+                "body": _encode_body(req_body),
+            },
+            "response": {
+                "status": status,
+                "headers": clean(dict(resp_headers)),
+                "body": _encode_body(resp_body),
+                "error": error,
+            },
             "elapsedMs": round(elapsed * 1000),
         }
         cap_dir: Path = self.settings.resolved_capture_dir
-        cap_dir.mkdir(parents=True, exist_ok=True)
+        await aiofiles.os.makedirs(cap_dir, exist_ok=True)
         async with aiofiles.open(cap_dir / f"proxy-{vhost}.jsonl", "a", encoding="utf-8") as fh:
             await fh.write(json.dumps(record) + "\n")

@@ -1,0 +1,21 @@
+services:
+  harmony-server:
+    build: .
+    image: harmony-server:local
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - harmony-data:/data
+      - ./device-db:/app/device-db:ro
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      - HARMONY_SECRET_KEY=${HARMONY_SECRET_KEY:-change-me-in-production}
+      - HARMONY_DB_PATH=/data/harmony.db
+      - HARMONY_DEVICE_DB_PATH=/app/device-db
+      - SERVER_MODE=${SERVER_MODE:-standalone}
+volumes:
+  harmony-data:

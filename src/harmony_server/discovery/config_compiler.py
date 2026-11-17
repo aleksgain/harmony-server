@@ -164,19 +164,34 @@ async def save_config(
         if dev.controlGroup is not None:
             groups = _normalise_groups(dev_id, dev.controlGroup)
         else:
-            groups = control_groups_from_commands(dev_id, await resolve_device_commands(dev, device_db))
+            groups = control_groups_from_commands(
+                dev_id, await resolve_device_commands(dev, device_db)
+            )
         device_groups[dev_id] = groups
         extra = dev.model_dump(
-            exclude={"id", "label", "type", "manufacturer", "model", "globalDeviceId",
-                     "controlGroup", "commands"},
+            exclude={
+                "id",
+                "label",
+                "type",
+                "manufacturer",
+                "model",
+                "globalDeviceId",
+                "controlGroup",
+                "commands",
+            },
             by_alias=False,
         )
         device_rows.append(
             Device(
-                hub_id=hub.id, device_id=dev_id, label=dev.label, type=dev.type,
-                manufacturer=dev.manufacturer, model=dev.model,
+                hub_id=hub.id,
+                device_id=dev_id,
+                label=dev.label,
+                type=dev.type,
+                manufacturer=dev.manufacturer,
+                model=dev.model,
                 global_device_id=dev.globalDeviceId,
-                control_groups_json=json.dumps(groups), extra_json=json.dumps(extra),
+                control_groups_json=json.dumps(groups),
+                extra_json=json.dumps(extra),
             )
         )
 
@@ -194,21 +209,38 @@ async def save_config(
         )
         fixit = {d: {"id": d, "Power": "On", **act.fixit.get(d, {})} for d in act.devices}
         extra = {
-            "fixit": fixit, "roles": act.roles, "controlGroup": groups,
+            "fixit": fixit,
+            "roles": act.roles,
+            "controlGroup": groups,
             "activityOrder": act.activityOrder if act.activityOrder is not None else order,
-            **act.model_dump(exclude={"id", "label", "type", "devices", "fixit", "roles",
-                                      "sequences", "controlGroup", "activityOrder"}),
+            **act.model_dump(
+                exclude={
+                    "id",
+                    "label",
+                    "type",
+                    "devices",
+                    "fixit",
+                    "roles",
+                    "sequences",
+                    "controlGroup",
+                    "activityOrder",
+                }
+            ),
         }
         activity_rows.append(
             Activity(
-                hub_id=hub.id, activity_id=act_id, label=act.label, type=act.type,
-                devices_json=json.dumps(act.devices), sequence_json=json.dumps(act.sequences),
+                hub_id=hub.id,
+                activity_id=act_id,
+                label=act.label,
+                type=act.type,
+                devices_json=json.dumps(act.devices),
+                sequence_json=json.dumps(act.sequences),
                 extra_json=json.dumps(extra),
             )
         )
 
-    await session.exec(delete(Device).where(col(Device.hub_id) == hub.id))  # type: ignore[call-overload]
-    await session.exec(delete(Activity).where(col(Activity.hub_id) == hub.id))  # type: ignore[call-overload]
+    await session.exec(delete(Device).where(col(Device.hub_id) == hub.id))
+    await session.exec(delete(Activity).where(col(Activity.hub_id) == hub.id))
     session.add_all(device_rows)
     session.add_all(activity_rows)
     await session.flush()
@@ -225,7 +257,9 @@ async def save_config(
     bundle["configVersion"] = config_version
     bundle["contentVersion"] = content_version
     row = HarmonyConfig(
-        hub_id=hub.id, config_version=config_version, content_version=content_version,
+        hub_id=hub.id,
+        config_version=config_version,
+        content_version=content_version,
         payload_json=json.dumps(bundle),
     )
     session.add(row)
@@ -249,34 +283,47 @@ async def compile_bundle(session: AsyncSession, hub: Hub) -> dict[str, Any]:
     device_out: list[dict[str, Any]] = []
     for d in devices:
         extra = json.loads(d.extra_json)
-        device_out.append({
-            **extra,
-            "id": d.device_id,
-            "label": d.label,
-            "type": d.type,
-            "manufacturer": d.manufacturer,
-            "model": d.model,
-            "deviceTypeDisplayName": d.type,
-            "globalDeviceId": d.global_device_id,
-            "isManualPower": "false",
-            "controlGroup": json.loads(d.control_groups_json),
-        })
+        device_out.append(
+            {
+                **extra,
+                "id": d.device_id,
+                "label": d.label,
+                "type": d.type,
+                "manufacturer": d.manufacturer,
+                "model": d.model,
+                "deviceTypeDisplayName": d.type,
+                "globalDeviceId": d.global_device_id,
+                "isManualPower": "false",
+                "controlGroup": json.loads(d.control_groups_json),
+            }
+        )
 
     activity_out: list[dict[str, Any]] = []
     for a in activities:
         extra = json.loads(a.extra_json)
-        activity_out.append({
-            **extra,
-            "id": a.activity_id,
-            "label": a.label,
-            "type": a.type,
-            "isAVActivity": a.type not in ("PowerOff",),
-            "sequences": json.loads(a.sequence_json),
-        })
+        activity_out.append(
+            {
+                **extra,
+                "id": a.activity_id,
+                "label": a.label,
+                "type": a.type,
+                "isAVActivity": a.type not in ("PowerOff",),
+                "sequences": json.loads(a.sequence_json),
+            }
+        )
     # Every hub config has the implicit PowerOff activity with id -1.
-    activity_out.append({"id": "-1", "label": "PowerOff", "type": "PowerOff",
-                         "isAVActivity": False, "activityOrder": 0, "controlGroup": [],
-                         "fixit": {}, "sequences": []})
+    activity_out.append(
+        {
+            "id": "-1",
+            "label": "PowerOff",
+            "type": "PowerOff",
+            "isAVActivity": False,
+            "activityOrder": 0,
+            "controlGroup": [],
+            "fixit": {},
+            "sequences": [],
+        }
+    )
 
     return {
         "hubId": str(hub.global_remote_id),

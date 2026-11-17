@@ -24,9 +24,7 @@ router = APIRouter(prefix="/api/auth", tags=["auth"])
 
 
 async def authenticate(session: SessionDep, email: str, password: str) -> Account | None:
-    account = (
-        await session.exec(select(Account).where(Account.email == email.lower()))
-    ).first()
+    account = (await session.exec(select(Account).where(Account.email == email.lower()))).first()
     if account is None or not await verify_password(password, account.hashed_password):
         return None
     return account

@@ -117,7 +117,8 @@ def build_security_router() -> APIRouter:
         body = await _body(request)
         aid = decode_token(
             _get(body, "UserAuthToken", "userAuthToken", "access_token", "token") or "",
-            settings, (SCOPE_LOGI, SCOPE_USER),
+            settings,
+            (SCOPE_LOGI, SCOPE_USER),
         )
         if aid is None and _get(body, "email", "username"):
             # Older clients send credentials directly.

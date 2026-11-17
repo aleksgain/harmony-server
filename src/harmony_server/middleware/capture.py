@@ -12,6 +12,7 @@ from datetime import UTC, datetime
 from pathlib import Path
 
 import aiofiles
+import aiofiles.os
 from fastapi import Request
 
 MAX_BODY = 1024 * 1024
@@ -38,7 +39,7 @@ async def capture_request(
         "body": body[:MAX_BODY].decode("utf-8", errors="replace"),
         "body_truncated": len(body) > MAX_BODY,
     }
-    capture_dir.mkdir(parents=True, exist_ok=True)
+    await aiofiles.os.makedirs(capture_dir, exist_ok=True)
     path = capture_dir / f"{vhost}.jsonl"
     async with aiofiles.open(path, "a", encoding="utf-8") as fh:
         await fh.write(json.dumps(record) + "\n")
