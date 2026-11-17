@@ -1,0 +1,107 @@
+name: Release
+
+on:
+  # A maintainer pushes a tag by hand: git tag v1.2.3 && git push origin v1.2.3
+  push:
+    tags:
+      - 'v[0-9]+.[0-9]+.[0-9]+'
+  # Called by auto-tag.yml. Tags pushed with GITHUB_TOKEN do not trigger
+  # `push: tags` workflows, so auto-tag invokes this workflow directly.
+  workflow_call:
+    inputs:
+      tag:
+        description: Release tag (vMAJOR.MINOR.PATCH)
+        required: true
+        type: string
+  # Re-run a release for an existing tag.
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Existing release tag to (re)build, e.g. v0.1.0
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: release-${{ inputs.tag || github.ref_name }}
+  cancel-in-progress: false
+
+env:
+  RELEASE_TAG: ${{ inputs.tag || github.ref_name }}
+
+jobs:
+  release:
+    name: Publish image and GitHub Release
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      packages: write
+    steps:
+      - name: Validate release tag
+        run: |
+          if [[ ! "$RELEASE_TAG" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            echo "::error::'$RELEASE_TAG' is not a vMAJOR.MINOR.PATCH tag"
+            exit 1
+          fi
+
+      - name: Check out tagged commit
+        uses: actions/checkout@v7
+        with:
+          ref: refs/tags/${{ env.RELEASE_TAG }}
+
+      - name: Check release assets exist
+        run: |
+          missing=0
+          for f in Dockerfile docker-compose.yml .env.example; do
+            [ -f "$f" ] || { echo "::error file=$f::$f is required for a release"; missing=1; }
+          done
+          exit "$missing"
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v4
+
+      - name: Log in to GHCR
+        uses: docker/login-action@v4
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Extract image metadata
+        id: meta
+        uses: docker/metadata-action@v6
+        with:
+          images: ghcr.io/${{ github.repository }}
+          flavor: |
+            latest=false
+          tags: |
+            type=semver,pattern={{version}},value=${{ env.RELEASE_TAG }}
+            type=semver,pattern={{major}}.{{minor}},value=${{ env.RELEASE_TAG }}
+            type=raw,value=latest
+
+      - name: Build and push multi-arch image
+        uses: docker/build-push-action@v7
+        with:
+          context: .
+          platforms: linux/amd64,linux/arm64
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          annotations: ${{ steps.meta.outputs.annotations }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v3
+        with:
+          tag_name: ${{ env.RELEASE_TAG }}
+          generate_release_notes: true
+          fail_on_unmatched_files: true
+          files: |
+            docker-compose.yml
+            .env.example

@@ -1,0 +1,3899 @@
+{
+ "$comment": "Captured response of svcs.myharmony.com/Discovery/Discovery.svc GetAllServices (clientTypeId unknown). Source: Harmony Revival analysis, remote/discovery_all.xml. Addresses are served as-is unless rewritten via HARMONY_SERVICE_URL_REWRITES.",
+ "services": {
+  "Json2Services": [
+   {
+    "Address": "https://cf-svcs.myharmony.com/Discovery/Discovery.svc",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "CloudFront/Discovery",
+    "Name": "Discovery"
+   },
+   {
+    "Address": "http://revue.logitech.com/DigitalHome/tv/GetSupportPolicy2",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "DigitalHome/GetSupportPolicy2",
+    "Name": "GetSupportPolicy2"
+   },
+   {
+    "Address": "http://revue.logitech.com/DigitalHome/tv/UpdateWarrantyLog",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "DigitalHome/UpdateWarrantyLog",
+    "Name": "UpdateWarrantyLog"
+   },
+   {
+    "Address": "http://revue.logitech.com/DigitalHome/tv/LogSupportRequest",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "DigitalHome/LogSupportRequest",
+    "Name": "LogSupportRequest"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/AccountManager.svc/json2/Ping",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "AccountManager/Ping",
+    "Name": "Ping"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/AccountManager.svc/json2/Impersonate",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "AccountManager/Impersonate",
+    "Name": "Impersonate"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/AccountManager.svc/json2/GetMyAccount",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "AccountManager/GetMyAccount",
+    "Name": "GetMyAccount"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/AccountManager.svc/json2/UpdatePasswordByPasswordAnswer",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "AccountManager/UpdatePasswordByPasswordAnswer",
+    "Name": "UpdatePasswordByPasswordAnswer"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/AccountManager.svc/json2/UpdatePasswordByOldPassword",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "AccountManager/UpdatePasswordByOldPassword",
+    "Name": "UpdatePasswordByOldPassword"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/AccountManager.svc/json2/UpdatePasswordQuestionAndAnswer",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "AccountManager/UpdatePasswordQuestionAndAnswer",
+    "Name": "UpdatePasswordQuestionAndAnswer"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/AccountManager.svc/json2/GetPasswordQuestion",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "AccountManager/GetPasswordQuestion",
+    "Name": "GetPasswordQuestion"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/AccountManager.svc/json2/AddSetupRating",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "AccountManager/AddSetupRating",
+    "Name": "AddSetupRating"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/AccountManager.svc/json2/GetMyHousehold",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "AccountManager/GetMyHousehold",
+    "Name": "GetMyHousehold"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/AccountManager.svc/json2/UpdateMyAccountProperties",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "AccountManager/UpdateMyAccountProperties",
+    "Name": "UpdateMyAccountProperties"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/AccountManager.svc/json2/UpdateAccountProperties",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "AccountManager/UpdateAccountProperties",
+    "Name": "UpdateAccountProperties"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/AccountManager.svc/json2/SecureControllerHandshake",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "AccountManager/SecureControllerHandshake",
+    "Name": "SecureControllerHandshake"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/AccountManager.svc/json2/SecureControllerCreateAccount",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "AccountManager/SecureControllerCreateAccount",
+    "Name": "SecureControllerCreateAccount"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/AccountManager.svc/json2/SecureControllerLogin",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "AccountManager/SecureControllerLogin",
+    "Name": "SecureControllerLogin"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/AccountManager.svc/json2/GetCustomerSupportPolicy",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "AccountManager/GetCustomerSupportPolicy",
+    "Name": "GetCustomerSupportPolicy"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/AccountManager.svc/json2/GetCustomerSupportPolicyByAccountId",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "AccountManager/GetCustomerSupportPolicyByAccountId",
+    "Name": "GetCustomerSupportPolicyByAccountId"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/AccountManager.svc/json2/Remote/{remoteId}/Context",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "AccountManager/Context",
+    "Name": "Context"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/AccountManager.svc/json2//account/{account_id}/setupSession",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "AccountManager/setupSession",
+    "Name": "setupSession"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/AccountManager.svc/json2/GetEmailPreferences",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "AccountManager/GetEmailPreferences",
+    "Name": "GetEmailPreferences"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/AccountManager.svc/json2/SaveEmailPreferences",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "AccountManager/SaveEmailPreferences",
+    "Name": "SaveEmailPreferences"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/AccountManager.svc/json2/UpdateUserProperties",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "AccountManager/UpdateUserProperties",
+    "Name": "UpdateUserProperties"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/AccountManager.svc/json2/RemoveAccountFromHousehold",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "AccountManager/RemoveAccountFromHousehold",
+    "Name": "RemoveAccountFromHousehold"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/DeviceManager.svc/json2/Ping",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "DeviceManager/Ping",
+    "Name": "Ping"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/DeviceManager.svc/json2/UpdateMyData",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "DeviceManager/UpdateMyData",
+    "Name": "UpdateMyData"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/DeviceManager.svc/json2/UpdateMultiple",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "DeviceManager/UpdateMultiple",
+    "Name": "UpdateMultiple"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/DeviceManager.svc/json2/UpdateMyDataRetrievingDevices",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "DeviceManager/UpdateMyDataRetrievingDevices",
+    "Name": "UpdateMyDataRetrievingDevices"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/DeviceManager.svc/json2/UpdateMyDataRetrievingDevicesByAccountId",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "DeviceManager/UpdateMyDataRetrievingDevicesByAccountId",
+    "Name": "UpdateMyDataRetrievingDevicesByAccountId"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/DeviceManager.svc/json2/GetDevice",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "DeviceManager/GetDevice",
+    "Name": "GetDevice"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/DeviceManager.svc/json2/GetMyDevices",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "DeviceManager/GetMyDevices",
+    "Name": "GetMyDevices"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/DeviceManager.svc/json2/GetDevices",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "DeviceManager/GetDevices",
+    "Name": "GetDevices"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/DeviceManager.svc/json2/GetChannelTuningFeature",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "DeviceManager/GetChannelTuningFeature",
+    "Name": "GetChannelTuningFeature"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/DeviceManager.svc/json2/GetCommands",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "DeviceManager/GetCommands",
+    "Name": "GetCommands"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/DeviceManager.svc/json2/AnalyzeIR",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "DeviceManager/AnalyzeIR",
+    "Name": "AnalyzeIR"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/DeviceManager.svc/json2/GetDeviceTypeProperties",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "DeviceManager/GetDeviceTypeProperties",
+    "Name": "GetDeviceTypeProperties"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/DeviceManager.svc/json2/GetAllTeachingCommands",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "DeviceManager/GetAllTeachingCommands",
+    "Name": "GetAllTeachingCommands"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/DeviceManager.svc/json2/GetAllTeachingCommandsForGivenPowerAndInputTypes",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "DeviceManager/GetAllTeachingCommandsForGivenPowerAndInputTypes",
+    "Name": "GetAllTeachingCommandsForGivenPowerAndInputTypes"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/DeviceManager.svc/json2/GetAllTeachingCommandsForGivenDeviceInformation",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "DeviceManager/GetAllTeachingCommandsForGivenDeviceInformation",
+    "Name": "GetAllTeachingCommandsForGivenDeviceInformation"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/DeviceManager.svc/json2/GetBrandNamesByDeviceTypes",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "DeviceManager/GetBrandNamesByDeviceTypes",
+    "Name": "GetBrandNamesByDeviceTypes"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/DeviceManager.svc/json2/SearchPublicDevices",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "DeviceManager/SearchPublicDevices",
+    "Name": "SearchPublicDevices"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/DeviceManager.svc/json2/SearchManufacturers",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "DeviceManager/SearchManufacturers",
+    "Name": "SearchManufacturers"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/DeviceManager.svc/json2/SearchGlobalDevicesByEdid",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "DeviceManager/SearchGlobalDevicesByEdid",
+    "Name": "SearchGlobalDevicesByEdid"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/DeviceManager.svc/json2/SearchGlobalDevicesWithFilterMaxResults",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "DeviceManager/SearchGlobalDevicesWithFilterMaxResults",
+    "Name": "SearchGlobalDevicesWithFilterMaxResults"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/DeviceManager.svc/json2/SearchGlobalDevices",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "DeviceManager/SearchGlobalDevices",
+    "Name": "SearchGlobalDevices"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/DeviceManager.svc/json2/SearchGlobalDevicesByClassification",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "DeviceManager/SearchGlobalDevicesByClassification",
+    "Name": "SearchGlobalDevicesByClassification"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/DeviceManager.svc/json2/SearchGlobalDevicesByClassificationAndSearchType",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "DeviceManager/SearchGlobalDevicesByClassificationAndSearchType",
+    "Name": "SearchGlobalDevicesByClassificationAndSearchType"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/DeviceManager.svc/json2/ValidateDevice",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "DeviceManager/ValidateDevice",
+    "Name": "ValidateDevice"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/DeviceManager.svc/json2/DetectLanguage",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "DeviceManager/DetectLanguage",
+    "Name": "DetectLanguage"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/DeviceManager.svc/json2/DetectLanguageForConnectedRemote",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "DeviceManager/DetectLanguageForConnectedRemote",
+    "Name": "DetectLanguageForConnectedRemote"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/DeviceManager.svc/json2/DetectLanguageForMultiCodeDevice",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "DeviceManager/DetectLanguageForMultiCodeDevice",
+    "Name": "DetectLanguageForMultiCodeDevice"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/DeviceManager.svc/json2/SearchGlobalDevicesByEdid",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "DeviceManager/SearchGlobalDevicesByEdid",
+    "Name": "SearchGlobalDevicesByEdid"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/DeviceManager.svc/json2/SearchIPScanDevices",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "DeviceManager/SearchIPScanDevices",
+    "Name": "SearchIPScanDevices"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/DeviceManager.svc/json2/Account/{accountId}/ProtocolList",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "DeviceManager/ProtocolList",
+    "Name": "ProtocolList"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/DeviceManager.svc/json2/GetGlobalDevices",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "DeviceManager/GetGlobalDevices",
+    "Name": "GetGlobalDevices"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/DeviceManager.svc/json2/GetManufacturers",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "DeviceManager/GetManufacturers",
+    "Name": "GetManufacturers"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/DeviceManager.svc/json2/SearchDevice/manf/{manufacturer}/model/{modelNumber}/iface/{iface}",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "DeviceManager/SearchDevice",
+    "Name": "SearchDevice"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/DeviceManager.svc/json2/GetGlobalDevicesByAccountAndGlobalDeviceID?accountId={accountId}GetGlobalDevicesByAccountAndGlobalDeviceID",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "DeviceManager/GetGlobalDevicesByAccountAndGlobalDeviceID",
+    "Name": "GetGlobalDevicesByAccountAndGlobalDeviceID"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/InternalDeviceManager.svc/json2/Ping",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "InternalDeviceManager/Ping",
+    "Name": "Ping"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/GlobalDeviceManager.svc/json2/Ping",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "GlobalDeviceManager/Ping",
+    "Name": "Ping"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/GlobalDeviceManager.svc/json2/GetInputInfo",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "GlobalDeviceManager/GetInputInfo",
+    "Name": "GetInputInfo"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/GlobalDeviceManager.svc/json2/GetDeviceInputType",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "GlobalDeviceManager/GetDeviceInputType",
+    "Name": "GetDeviceInputType"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/RemotePlatform/RemoteManager.svc/json2/Ping",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "RemoteManager/Ping",
+    "Name": "Ping"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/RemotePlatform/RemoteManager.svc/json2/RegisterSuccessfulCompile",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "RemoteManager/RegisterSuccessfulCompile",
+    "Name": "RegisterSuccessfulCompile"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/RemotePlatform/RemoteManager.svc/json2/AcceptLicenseAgreement",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "RemoteManager/AcceptLicenseAgreement",
+    "Name": "AcceptLicenseAgreement"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/RemotePlatform/RemoteManager.svc/json2/AddRemote",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "RemoteManager/AddRemote",
+    "Name": "AddRemote"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/RemotePlatform/RemoteManager.svc/json2/AddRemoteToAccount",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "RemoteManager/AddRemoteToAccount",
+    "Name": "AddRemoteToAccount"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/RemotePlatform/RemoteManager.svc/json2/GetDongles",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "RemoteManager/GetDongles",
+    "Name": "GetDongles"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/RemotePlatform/RemoteManager.svc/json2/SaveDongles",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "RemoteManager/SaveDongles",
+    "Name": "SaveDongles"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/RemotePlatform/RemoteManager.svc/json2/GetRemote",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "RemoteManager/GetRemote",
+    "Name": "GetRemote"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/RemotePlatform/RemoteManager.svc/json2/NotifySyncStatus",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "RemoteManager/NotifySyncStatus",
+    "Name": "NotifySyncStatus"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/RemotePlatform/RemoteManager.svc/json2/GetSyncStatus",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "RemoteManager/GetSyncStatus",
+    "Name": "GetSyncStatus"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/RemotePlatform/RemoteManager.svc/json2/SetRemoteSyncRequired",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "RemoteManager/SetRemoteSyncRequired",
+    "Name": "SetRemoteSyncRequired"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/RemotePlatform/RemoteManager.svc/json2/SavePairings",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "RemoteManager/SavePairings",
+    "Name": "SavePairings"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/RemotePlatform/RemoteManager.svc/json2/AddHubToAccount",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "RemoteManager/AddHubToAccount",
+    "Name": "AddHubToAccount"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/RemotePlatform/RemoteManager.svc/json2/RegisterSuccessfulSync",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "RemoteManager/RegisterSuccessfulSync",
+    "Name": "RegisterSuccessfulSync"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/LoggingPlatform/LoggingManager.svc/json2/Ping",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "LoggingManager/Ping",
+    "Name": "Ping"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/LoggingPlatform/LoggingManager.svc/json2/SubmitUserDataLogs",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "LoggingManager/SubmitUserDataLogs",
+    "Name": "SubmitUserDataLogs"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/LoggingPlatform/LoggingManager.svc/json2/SubmitClientUserDataLogs",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "LoggingManager/SubmitClientUserDataLogs",
+    "Name": "SubmitClientUserDataLogs"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/Discovery/Discovery.svc/json2/GetSoapServices",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "Discovery/GetSoapServices",
+    "Name": "GetSoapServices"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/Discovery/Discovery.svc/json2/GetJsonOperations",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "Discovery/GetJsonOperations",
+    "Name": "GetJsonOperations"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/Discovery/Discovery.svc/json2/GetBinaryOperations",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "Discovery/GetBinaryOperations",
+    "Name": "GetBinaryOperations"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/Discovery/Discovery.svc/json2/GetJson2Uris",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "Discovery/GetJson2Uris",
+    "Name": "GetJson2Uris"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/SyncPlatform/CompileManager.svc/json2/Ping",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "CompileManager/Ping",
+    "Name": "Ping"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/SyncPlatform/CompileManager.svc/json2/StartCompile",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "CompileManager/StartCompile",
+    "Name": "StartCompile"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/SyncPlatform/CompileManager.svc/json2/IsRemoteSyncRequired",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "CompileManager/IsRemoteSyncRequired",
+    "Name": "IsRemoteSyncRequired"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/SyncPlatform/CompileManager.svc/json2/GetConnectedRemoteConfig",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "CompileManager/GetConnectedRemoteConfig",
+    "Name": "GetConnectedRemoteConfig"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/SyncPlatform/CompileManager.svc/json2/Remote/{remoteId}/CommandList",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "CompileManager/CommandList",
+    "Name": "CommandList"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/SyncPlatform/DeletionManager.svc/json2/DeleteDevices",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "DeletionManager/DeleteDevices",
+    "Name": "DeleteDevices"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/SyncPlatform/DeletionManager.svc/json2/DeleteActivities",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "DeletionManager/DeleteActivities",
+    "Name": "DeleteActivities"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/GuidePlatform/GuideManager.svc/json2/Ping",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "GuideManager/Ping",
+    "Name": "Ping"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/GuidePlatform/GuideManager.svc/json2/SearchIcon",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "GuideManager/SearchIcon",
+    "Name": "SearchIcon"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/AggregationPlatform/AggregationManager.svc/json2/Ping",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "AggregationManager/Ping",
+    "Name": "Ping"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/AggregationPlatform/AggregationManager.svc/json2/GetSampleModelNumber",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "AggregationManager/GetSampleModelNumber",
+    "Name": "GetSampleModelNumber"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/AggregationPlatform/AggregationManager.svc/json2/GetBrandNamesByDeviceCategory",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "AggregationManager/GetBrandNamesByDeviceCategory",
+    "Name": "GetBrandNamesByDeviceCategory"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/AggregationPlatform/AggregationManager.svc/json2/GetModelNumbersByServiceProvider",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "AggregationManager/GetModelNumbersByServiceProvider",
+    "Name": "GetModelNumbersByServiceProvider"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/AggregationPlatform/AggregationManager.svc/json2/GetServiceProviderEquipment",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "AggregationManager/GetServiceProviderEquipment",
+    "Name": "GetServiceProviderEquipment"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/InfraredAnalysisPlatform/InfraredAnalysisManager.svc/json2/Ping",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "InfraredAnalysisManager/Ping",
+    "Name": "Ping"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/InfraredAnalysisPlatform/InfraredAnalysisManager.svc/json2/AnalyzeInfrared",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "InfraredAnalysisManager/AnalyzeInfrared",
+    "Name": "AnalyzeInfrared"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/InfraredAnalysisPlatform/InfraredAnalysisManager.svc/json2/SaveTeachingRequest",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "InfraredAnalysisManager/SaveTeachingRequest",
+    "Name": "SaveTeachingRequest"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/InfraredAnalysisPlatform/InfraredAnalysisManager.svc/json2/GetTeachingRequest",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "InfraredAnalysisManager/GetTeachingRequest",
+    "Name": "GetTeachingRequest"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/InfraredAnalysisPlatform/InfraredAnalysisManager.svc/json2/GetTeachingStatus",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "InfraredAnalysisManager/GetTeachingStatus",
+    "Name": "GetTeachingStatus"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/InfraredAnalysisPlatform/InfraredAnalysisManager.svc/json2/SaveTeachingStatus",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "InfraredAnalysisManager/SaveTeachingStatus",
+    "Name": "SaveTeachingStatus"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserFeaturePlatform/UserFeatureManager.svc/json2/Ping",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserFeatureManager/Ping",
+    "Name": "Ping"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserFeaturePlatform/UserFeatureManager.svc/json2/SaveUserFeatures",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserFeatureManager/SaveUserFeatures",
+    "Name": "SaveUserFeatures"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserFeaturePlatform/UserFeatureManager.svc/json2/GetUserFeatures",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserFeatureManager/GetUserFeatures",
+    "Name": "GetUserFeatures"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserFeaturePlatform/UserFeatureManager.svc/json2/DeleteUserFeatures",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserFeatureManager/DeleteUserFeatures",
+    "Name": "DeleteUserFeatures"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserFeaturePlatform/UserFeatureManager.svc/json2/CopyFeaturesFromGlobalDevice",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserFeatureManager/CopyFeaturesFromGlobalDevice",
+    "Name": "CopyFeaturesFromGlobalDevice"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserFeaturePlatform/GlobalFeatureManager.svc/json2/GetGlobalFeatures",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "GlobalFeatureManager/GetGlobalFeatures",
+    "Name": "GetGlobalFeatures"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserButtonMappingPlatform/UserButtonMappingManager.svc/json2/Ping",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserButtonMappingManager/Ping",
+    "Name": "Ping"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserButtonMappingPlatform/UserButtonMappingManager.svc/json2/GetDefaultButtonMaps",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserButtonMappingManager/GetDefaultButtonMaps",
+    "Name": "GetDefaultButtonMaps"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserButtonMappingPlatform/UserButtonMappingManager.svc/json2/GetRemoteCanvas",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserButtonMappingManager/GetRemoteCanvas",
+    "Name": "GetRemoteCanvas"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserButtonMappingPlatform/UserButtonMappingManager.svc/json2/SaveButtonMaps",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserButtonMappingManager/SaveButtonMaps",
+    "Name": "SaveButtonMaps"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserButtonMappingPlatform/UserButtonMappingManager.svc/json2/GetButtonMaps",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserButtonMappingManager/GetButtonMaps",
+    "Name": "GetButtonMaps"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserButtonMappingPlatform/UserButtonMappingManager.svc/json2/GetRemoteEmulatorButtons",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserButtonMappingManager/GetRemoteEmulatorButtons",
+    "Name": "GetRemoteEmulatorButtons"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserButtonMappingPlatform/UserButtonMappingManager.svc/json2/GetRootDeviceModeButtonMap",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserButtonMappingManager/GetRootDeviceModeButtonMap",
+    "Name": "GetRootDeviceModeButtonMap"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserButtonMappingPlatform/UserButtonMappingManager.svc/json2/GetRootButtonMapForSurface",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserButtonMappingManager/GetRootButtonMapForSurface",
+    "Name": "GetRootButtonMapForSurface"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserButtonMappingPlatform/UserButtonMappingManager.svc/json2/GetDeviceModeButtonMaps",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserButtonMappingManager/GetDeviceModeButtonMaps",
+    "Name": "GetDeviceModeButtonMaps"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserButtonMappingPlatform/UserButtonMappingManager.svc/json2/UpdateDeviceModeButtonMaps",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserButtonMappingManager/UpdateDeviceModeButtonMaps",
+    "Name": "UpdateDeviceModeButtonMaps"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserButtonMappingPlatform/UserButtonMappingManager.svc/json2/ResetToDefaultDeviceModeButtonMaps",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserButtonMappingManager/ResetToDefaultDeviceModeButtonMaps",
+    "Name": "ResetToDefaultDeviceModeButtonMaps"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserButtonMappingPlatform/UserButtonMappingManager.svc/json2/DeleteDeviceModeButtonMaps",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserButtonMappingManager/DeleteDeviceModeButtonMaps",
+    "Name": "DeleteDeviceModeButtonMaps"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserButtonMappingPlatform/UserButtonMappingManager.svc/json2/DeleteTaughtDeviceModeCommandButtonMaps",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserButtonMappingManager/DeleteTaughtDeviceModeCommandButtonMaps",
+    "Name": "DeleteTaughtDeviceModeCommandButtonMaps"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserButtonMappingPlatform/UserButtonMappingManager.svc/json2/UpdateUserModeMapping",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserButtonMappingManager/UpdateUserModeMapping",
+    "Name": "UpdateUserModeMapping"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserButtonMappingPlatform/UserButtonMappingManager.svc/json2/DeleteUserModeMapping",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserButtonMappingManager/DeleteUserModeMapping",
+    "Name": "DeleteUserModeMapping"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserButtonMappingPlatform/FunctionMappingManager.svc/json2/Ping",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "FunctionMappingManager/Ping",
+    "Name": "Ping"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserButtonMappingPlatform/FunctionMappingManager.svc/json2/GetFunctionMaps",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "FunctionMappingManager/GetFunctionMaps",
+    "Name": "GetFunctionMaps"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/CompositeSecurityServices/Security.svc/json2/Ping",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "Security/Ping",
+    "Name": "Ping"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/CompositeSecurityServices/Security.svc/json2/GetUserAuthToken",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "Security/GetUserAuthToken",
+    "Name": "GetUserAuthToken"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/CompositeSecurityServices/Security.svc/json2/GetAuthenticatedUserAuthToken",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "Security/GetAuthenticatedUserAuthToken",
+    "Name": "GetAuthenticatedUserAuthToken"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/CompositeSecurityServices/Security.svc/json2/LoginForHubSetup",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "Security/LoginForHubSetup",
+    "Name": "LoginForHubSetup"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/CompositeSecurityServices/Security.svc/json2/SendPasswordResetMail",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "Security/SendPasswordResetMail",
+    "Name": "SendPasswordResetMail"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/CompositeSecurityServices/Security.svc/json2/ResetPassword",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "Security/ResetPassword",
+    "Name": "ResetPassword"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/CompositeSecurityServices/Security.svc/json2/LoginWithEmailToken",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "Security/LoginWithEmailToken",
+    "Name": "LoginWithEmailToken"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/CompositeSecurityServices/Security.svc/json2/LoginUser",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "Security/LoginUser",
+    "Name": "LoginUser"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/CompositeSecurityServices/Security.svc/json2/Logout",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "Security/Logout",
+    "Name": "Logout"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/CompositeSecurityServices/Security.svc/json2/signin",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "Security/SignIn",
+    "Name": "SignIn"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/CompositeSecurityServices/Security.svc/json2/get-impersonate-token",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "Security/GetImpersonateToken",
+    "Name": "GetImpersonateToken"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/CompositeSecurityServices/Security.svc/json2/authorize",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "Security/Authorize",
+    "Name": "Authorize"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/CompositeSecurityServices/Security.svc/json2/signin-installertoken",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "Security/SignInWithInstallerToken",
+    "Name": "SignInWithInstallerToken"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/CompositeSecurityServices/Security.svc/LinkSecurity/json2/Handshake",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "LinkSecurity/Handshake",
+    "Name": "Handshake"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/CompositeSecurityServices/Security.svc/LinkSecurity/json2/GtvCreateAccount",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "LinkSecurity/GtvCreateAccount",
+    "Name": "GtvCreateAccount"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/CompositeSecurityServices/Security.svc/LinkSecurity/json2/GtvFindOrCreateAccount",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "LinkSecurity/GtvFindOrCreateAccount",
+    "Name": "GtvFindOrCreateAccount"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/CompositeSecurityServices/Security.svc/LinkSecurity/json2/GtvLogin",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "LinkSecurity/GtvLogin",
+    "Name": "GtvLogin"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/CompositeSecurityServices/Security.svc/LinkSecurity/json2/GtvAuthenticateAndLogin",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "LinkSecurity/GtvAuthenticateAndLogin",
+    "Name": "GtvAuthenticateAndLogin"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/CompositeSecurityServices/Security.svc/LinkSecurity/json2/LoginWithUserAuthToken",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "LinkSecurity/LoginWithUserAuthToken",
+    "Name": "LoginWithUserAuthToken"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/CompositeSecurityServices/Security.svc/LinkSecurity/json2/Login",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "LinkSecurity/Login",
+    "Name": "Login"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/ProductsPlatform/ProductsManager.svc/json2/Ping",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "ProductsManager/Ping",
+    "Name": "Ping"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/ProductsPlatform/ProductsManager.svc/json2/GetCustomerSupportPolicyByMemberWeb",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "ProductsManager/GetCustomerSupportPolicyByMemberWeb",
+    "Name": "GetCustomerSupportPolicyByMemberWeb"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/ProductsPlatform/ProductsManager.svc/json2/GetCustomerSupportPolicyByCustomerSupportDetail",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "ProductsManager/GetCustomerSupportPolicyByCustomerSupportDetail",
+    "Name": "GetCustomerSupportPolicyByCustomerSupportDetail"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/ProductsPlatform/ProductsManager.svc/json2/GetHarmonyProducts",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "ProductsManager/GetHarmonyProducts",
+    "Name": "GetHarmonyProducts"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/ProductsPlatform/ProductsManager.svc/json2/GetProduct",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "ProductsManager/GetProduct",
+    "Name": "GetProduct"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/ProductsPlatform/ProductsManager.svc/json2/GetProductButtonList",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "ProductsManager/GetProductButtonList",
+    "Name": "GetProductButtonList"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/ProductsPlatform/ProductsManager.svc/json2/GetProductByProductId",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "ProductsManager/GetProductByProductId",
+    "Name": "GetProductByProductId"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/ProductsPlatform/ProductsManager.svc/json2/GetProductSettings",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "ProductsManager/GetProductSettings",
+    "Name": "GetProductSettings"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/ProductsPlatform/ProductsManager.svc/json2/GetAllProducts",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "ProductsManager/GetAllProducts",
+    "Name": "GetAllProducts"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/ProductsPlatform/ProductsManager.svc/json2/GetProductUsingProductIdentifier",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "ProductsManager/GetProductUsingProductIdentifier",
+    "Name": "GetProductUsingProductIdentifier"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/ProductsPlatform/ProductsManager.svc/json2/GetSupportPolicies",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "ProductsManager/GetSupportPolicies",
+    "Name": "GetSupportPolicies"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/ProductsPlatform/InternalProductsManager.svc/json2/Ping",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "InternalProductsManager/Ping",
+    "Name": "Ping"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json2/Ping",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/Ping",
+    "Name": "Ping"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json2/Account/{accountId}/DeviceList",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/DeviceList",
+    "Name": "DeviceList"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json2/Account/{accountId}/SettingList",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/SettingList",
+    "Name": "SettingList"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json2/Account/{accountId}/MapList",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/MapList",
+    "Name": "MapList"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json2/Account/{accountId}/FunctionList",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/FunctionList",
+    "Name": "FunctionList"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json2/Account/{accountId}/ActivityList",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/ActivityList",
+    "Name": "ActivityList"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json2/Account/{accountId}/ProtocolList",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/ProtocolList",
+    "Name": "ProtocolList"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json2/Account/{accountId}/CapabilityList",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/CapabilityList",
+    "Name": "CapabilityList"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json2/UpdateMyData",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/UpdateMyData",
+    "Name": "UpdateMyData"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json2/HouseholdCapabilityList",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/HouseholdCapabilityList",
+    "Name": "HouseholdCapabilityList"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json2/SaveActivities",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/SaveActivities",
+    "Name": "SaveActivities"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json2/SubmitUserDataLogs",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/SubmitUserDataLogs",
+    "Name": "SubmitUserDataLogs"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json2/GetCustomerSupportPolicyByAccountId",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/GetCustomerSupportPolicyByAccountId",
+    "Name": "GetCustomerSupportPolicyByAccountId"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json2/EndTeachingSession",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/EndTeachingSession",
+    "Name": "EndTeachingSession"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json2/StartTeachingSession",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/StartTeachingSession",
+    "Name": "StartTeachingSession"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json2/UpdateDevices",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/UpdateDevices",
+    "Name": "UpdateDevices"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json2/UpdateDeviceCommands",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/UpdateDeviceCommands",
+    "Name": "UpdateDeviceCommands"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json2/AddRemoteByCertificate",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/AddRemoteByCertificate",
+    "Name": "AddRemoteByCertificate"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json2/ListFilesFromS3Bucket",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/ListFilesFromS3Bucket",
+    "Name": "ListFilesFromS3Bucket"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json2/UploadFileToS3Bucket",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/UploadFileToS3Bucket",
+    "Name": "UploadFileToS3Bucket"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json2/DeleteObjectInS3Bucket",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/DeleteObjectInS3Bucket",
+    "Name": "DeleteObjectInS3Bucket"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json2/AddHubToAccount",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/AddHubToAccount",
+    "Name": "AddHubToAccount"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json2/GetAccountProducts",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/GetAccountProducts",
+    "Name": "GetAccountProducts"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json2/GetButtonMaps",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/GetButtonMaps",
+    "Name": "GetButtonMaps"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json2/UpdateCommand",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/UpdateCommand",
+    "Name": "UpdateCommand"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json2/GetRecommendedActivities",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/GetRecommendedActivities",
+    "Name": "GetRecommendedActivities"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json2/GetActivityRoles",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/GetActivityRoles",
+    "Name": "GetActivityRoles"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json2/GetRecommendedActivityTypes",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/GetRecommendedActivityTypes",
+    "Name": "GetRecommendedActivityTypes"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json2/GetActivityTypeRoles",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/GetActivityTypeRoles",
+    "Name": "GetActivityTypeRoles"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json2/GetActivityTypesAndRoles",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/GetActivityTypesAndRoles",
+    "Name": "GetActivityTypesAndRoles"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json2/Account/{accountId}/Remote/{remoteId}/Settings",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/Settings",
+    "Name": "Settings"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json2/Account/{accountId}/Remote/{remoteId}/RegisterSuccessfulSync",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/RegisterSuccessfulSync",
+    "Name": "RegisterSuccessfulSync"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json2/GetSmartTVMenuNames",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/GetSmartTVMenuNames",
+    "Name": "GetSmartTVMenuNames"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json2/UpgradeConfig",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/UpgradeConfig",
+    "Name": "UpgradeConfig"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json2/ProvisionHub",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/ProvisionHub",
+    "Name": "ProvisionHub"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json2/GetGlobalRemote",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/GetGlobalRemote",
+    "Name": "GetGlobalRemote"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json2/GetHubCloudToken",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/GetHubCloudToken",
+    "Name": "GetHubCloudToken"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json2/PowerOnCommandList",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/PowerOnCommandList",
+    "Name": "PowerOnCommandList"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json2/RefineActivity",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/RefineActivity",
+    "Name": "RefineActivity"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json2/SimpleRestSaveActivities",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/SimpleRestSaveActivities",
+    "Name": "SimpleRestSaveActivities"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json2/Account/{accountId}/SimpleRestGetActivities",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/SimpleRestGetActivities",
+    "Name": "SimpleRestGetActivities"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json2/Account/{accountId}/SimpleRestSaveDeviceAndFeatures",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/SimpleRestSaveDeviceAndFeatures",
+    "Name": "SimpleRestSaveDeviceAndFeatures"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json2/Account/{accountId}/SimpleRestGetDeviceList",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/SimpleRestGetDeviceList",
+    "Name": "SimpleRestGetDeviceList"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json2/SimpleRestGetHouseholdProducts",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/SimpleRestGetHouseholdProducts",
+    "Name": "SimpleRestGetHouseholdProducts"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json2/installer-userdetails",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/GetInstallerMappedUsers",
+    "Name": "GetInstallerMappedUsers"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json2/useraccountdetails",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/GetUserAccountDetails",
+    "Name": "GetUserAccountDetails"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json2/checkuserdetails",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/CheckUserDetails",
+    "Name": "CheckUserDetails"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json2/importusers",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/ImportUsers",
+    "Name": "ImportUsers"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json2/GetWarrantyDetails",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/GetWarrantyDetails",
+    "Name": "GetWarrantyDetails"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/EasyZapperPlatform/EasyZapperManager.svc/json2/CheckEasyZapperAccount",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "EasyZapperManager/CheckEasyZapperAccount",
+    "Name": "CheckEasyZapperAccount"
+   },
+   {
+    "Address": "http://svcs.myharmony.com/InternalHarmonyPlatform/InternalSystemManager.svc/json2/Ping",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "InternalSystemManager/Ping",
+    "Name": "Ping"
+   },
+   {
+    "Address": "http://svcs.myharmony.com/InternalHarmonyPlatform/InternalSystemManager.svc/json2/GetDisabledCompileQueues",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "InternalSystemManager/GetDisabledCompileQueues",
+    "Name": "GetDisabledCompileQueues"
+   },
+   {
+    "Address": "http://svcs.myharmony.com/InternalHarmonyPlatform/InternalSystemManager.svc/json2/SetDisabledCompileQueues",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "InternalSystemManager/SetDisabledCompileQueues",
+    "Name": "SetDisabledCompileQueues"
+   },
+   {
+    "Address": "http://svcs.myharmony.com/InternalHarmonyPlatform/InternalSystemManager.svc/json2/DecryptImpersonationToken",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "InternalSystemManager/DecryptImpersonationToken",
+    "Name": "DecryptImpersonationToken"
+   },
+   {
+    "Address": "http://svcs.myharmony.com/InternalHarmonyPlatform/InternalSystemManager.svc/json2/SetUserLanguageToGlobalLanguage",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "InternalSystemManager/SetUserLanguageToGlobalLanguage",
+    "Name": "SetUserLanguageToGlobalLanguage"
+   },
+   {
+    "Address": "http://svcs.myharmony.com/InternalHarmonyPlatform/InternalSystemManager.svc/json2/GetGlobalDeviceIdByAliasName",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "InternalSystemManager/GetGlobalDeviceIdByAliasName",
+    "Name": "GetGlobalDeviceIdByAliasName"
+   },
+   {
+    "Address": "http://svcs.myharmony.com/InternalHarmonyPlatform/InternalSystemManager.svc/json2/CheckNetricsAvailability",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "InternalSystemManager/CheckNetricsAvailability",
+    "Name": "CheckNetricsAvailability"
+   },
+   {
+    "Address": "http://svcs.myharmony.com/InternalHarmonyPlatform/InternalSystemManager.svc/json2/UpdateNetrics",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "InternalSystemManager/UpdateNetrics",
+    "Name": "UpdateNetrics"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/ActivityPlatform/ActivityManager.svc/json2/Ping",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "ActivityManager/Ping",
+    "Name": "Ping"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/ActivityPlatform/ActivityManager.svc/json2/SimpleGetActivities",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "ActivityManager/SimpleGetActivities",
+    "Name": "SimpleGetActivities"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/ActivityPlatform/ActivityManager.svc/json2/GetActivities",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "ActivityManager/GetActivities",
+    "Name": "GetActivities"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/ActivityPlatform/ActivityManager.svc/json2/SaveActivities",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "ActivityManager/SaveActivities",
+    "Name": "SaveActivities"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/ActivityPlatform/ActivityManager.svc/json2/DeleteActivities",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "ActivityManager/DeleteActivities",
+    "Name": "DeleteActivities"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/ActivityPlatform/ActivityManager.svc/json2/ResetActivitiesToDefault",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "ActivityManager/ResetActivitiesToDefault",
+    "Name": "ResetActivitiesToDefault"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/ActivityPlatform/ActivityManager.svc/json2/GetRecommendedActivitiesFromDevices",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "ActivityManager/GetRecommendedActivitiesFromDevices",
+    "Name": "GetRecommendedActivitiesFromDevices"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/ActivityPlatform/ActivityManager.svc/json2/GetActivityRoles",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "ActivityManager/GetActivityRoles",
+    "Name": "GetActivityRoles"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/ActivityPlatform/ActivityManager.svc/json2/Account/{accountId}/ActivityList",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "ActivityManager/ActivityList",
+    "Name": "ActivityList"
+   },
+   {
+    "Address": "https://files.myharmony.com/Assets/Firmware/Firmware",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "DigitalHome/Firmware",
+    "Name": "Firmware"
+   },
+   {
+    "Address": "http://files.myharmony.com/Assets/Firmware/Firmware",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "DigitalHome/Firmware",
+    "Name": "Firmware"
+   },
+   {
+    "Address": "http://web-hush-int.dynamite.myharmony.com/secure/Api",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "WebPushService/Api",
+    "Name": "Api"
+   },
+   {
+    "Address": "http://xmpp-hush-int.dynamite.myharmony.com/source/Source",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "XmppPushService/Source",
+    "Name": "Source"
+   },
+   {
+    "Address": "https://sus.dhg.myharmony.com/SoftwareUpdatesPlatform/SoftwareUpdates/product/{productId}/unit/{unitId}/image/Latest",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "SoftwareUpdateService/Latest",
+    "Name": "Latest"
+   },
+   {
+    "Address": "https://sus.dhg.myharmony.com/SoftwareUpdatesPlatform/SoftwareUpdates/product/{productId}/unit/{unitId}/streams",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "SoftwareUpdateService/Streams",
+    "Name": "Streams"
+   },
+   {
+    "Address": "https://sus.dhg.myharmony.com/SoftwareUpdatesPlatform/SoftwareUpdates/product/{productId}/unit/{unitId}/features",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "SoftwareUpdateService/Features",
+    "Name": "Features"
+   },
+   {
+    "Address": "https://sus.dhg.myharmony.com/SoftwareUpdatesPlatform/SoftwareUpdates/product/{productId}/unit/{unitId}/info",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "SoftwareUpdateService/FirmwareInfo",
+    "Name": "FirmwareInfo"
+   },
+   {
+    "Address": "https://sus.dhg.myharmony.com/SoftwareUpdatesPlatform/SoftwareUpdates/getUpdates",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "SoftwareUpdateService/GetUpdates",
+    "Name": "GetUpdates"
+   },
+   {
+    "Address": "https://content.dhg.myharmony.com/1.0/Country",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "ContentService/Country",
+    "Name": "Country"
+   },
+   {
+    "Address": "https://content.dhg.myharmony.com/1.0/User;{userProfileUri}",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "ContentService/User",
+    "Name": "User"
+   },
+   {
+    "Address": "https://content.dhg.myharmony.com/1.0/Device;{deviceProfileUri}",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "ContentService/Device",
+    "Name": "Device"
+   },
+   {
+    "Address": "https://content.dhg.myharmony.com/1.0/Service/{providerId}",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "ContentService/Service",
+    "Name": "Service"
+   },
+   {
+    "Address": "https://content.dhg.myharmony.com/1.0/Country/{countryCode}/Region/{zipcode}",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "ContentService/Provider",
+    "Name": "Provider"
+   },
+   {
+    "Address": "https://content.dhg.myharmony.com/1.0/config;{accountUri}",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "ContentService/config",
+    "Name": "config"
+   },
+   {
+    "Address": "https://d1tk8oqnnsddt5.cloudfront.net/1.0/station/{stationId}/image;maxX=40;maxY=40",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "ContentImageService/Image",
+    "Name": "Image"
+   },
+   {
+    "Address": "https://d1tk8oqnnsddt5.cloudfront.net/1.0/externalImage/{sourceUri};maxX={width};maxY={height}",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "ContentImageService/ExternalImage",
+    "Name": "ExternalImage"
+   },
+   {
+    "Address": "https://content.dhg.myharmony.com/1.0/Config;{accountUri}",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "HomeAutomationService/Config",
+    "Name": "Config"
+   },
+   {
+    "Address": "https://logging.dhg.myharmony.com/1.0/logger/submitHubLog",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "Loggly/EmbeddedClient",
+    "Name": "EmbeddedClient"
+   },
+   {
+    "Address": "https://logs-01.loggly.com/inputs/2cd74ba5-d000-4c36-bbc6-55577dc27a91/tag/silverlightclient",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "Loggly/HarmonyClient",
+    "Name": "HarmonyClient"
+   },
+   {
+    "Address": "https://logging.dhg.myharmony.com/1.0/logger/submitUsageData",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "LoggingService/SubmitUsageData",
+    "Name": "SubmitUsageData"
+   },
+   {
+    "Address": "https://logging.dhg.myharmony.com/1.0/logger/submitLogEvents",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "LoggingService/SubmitLogEvents",
+    "Name": "SubmitLogEvents"
+   },
+   {
+    "Address": "https://logging.dhg.myharmony.com/1.0/logger/submitHubLog",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "LoggingService/EmbeddedClient",
+    "Name": "EmbeddedClient"
+   },
+   {
+    "Address": "https://logging.dhg.myharmony.com/1.0/logger/submitClientLog",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "LoggingService/HarmonyClient",
+    "Name": "HarmonyClient"
+   },
+   {
+    "Address": "https://d1tk8oqnnsddt5.cloudfront.net/1.0/faq/device/manufacturer/{0}/model/{1}?product={2}",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "FAQServices/FAQ",
+    "Name": "FAQ"
+   },
+   {
+    "Address": "https://hercules.myharmony.com/popularApps",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "AutoActivityService/popularApps",
+    "Name": "popularApps"
+   },
+   {
+    "Address": "https://hercules.myharmony.com/popularSonosFavorites",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "AutoActivityService/popularSonosFavorites",
+    "Name": "popularSonosFavorites"
+   },
+   {
+    "Address": "https://hercules.myharmony.com/api/activity/refine",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "AutoActivityService/refineActivities",
+    "Name": "refineActivities"
+   },
+   {
+    "Address": "https://hercules.myharmony.com/api/popular-favorites",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "AutoActivityService/popularFavorites",
+    "Name": "popularFavorites"
+   },
+   {
+    "Address": "https://cdn-cx-images.dynamite.myharmony.com/deviceicons/wireframes-v2/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "FAQAssets/Image",
+    "Name": "Image"
+   },
+   {
+    "Address": "https://home.myharmony.com/time/locale",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "TimeServer/locale",
+    "Name": "locale"
+   },
+   {
+    "Address": "https://home.myharmony.com/time/current",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "TimeServer/current",
+    "Name": "current"
+   },
+   {
+    "Address": "https://home.myharmony.com/time/zone",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "TimeServer/zone",
+    "Name": "zone"
+   },
+   {
+    "Address": "https://home.myharmony.com/time/country",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "TimeServer/country",
+    "Name": "country"
+   },
+   {
+    "Address": "http://geo.myharmony.com/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "GeorestrictionsServer/Georestrictions",
+    "Name": "Georestrictions"
+   },
+   {
+    "Address": "https://home.myharmony.com/internal/login",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "CloudApi/login",
+    "Name": "login"
+   },
+   {
+    "Address": "https://home.myharmony.com/oauth2/token",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "CloudApi/token",
+    "Name": "token"
+   },
+   {
+    "Address": "https://home.myharmony.com/oauth2/deAuthorize",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "CloudApi/deAuthorize",
+    "Name": "deAuthorize"
+   },
+   {
+    "Address": "https://home.myharmony.com/internal/channel/{channel}/message/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "CloudApi/message",
+    "Name": "message"
+   },
+   {
+    "Address": "https://home.myharmony.com/internal/accessPolicy/{:policyId}",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "CloudApi/accessPolicy",
+    "Name": "accessPolicy"
+   },
+   {
+    "Address": "https://home.myharmony.com/internal/wifi",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "CloudApi/postHubWifi",
+    "Name": "postHubWifi"
+   },
+   {
+    "Address": "https://home.myharmony.com/internal/hub/{hubId}/wifi",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "CloudApi/getHubWifi",
+    "Name": "getHubWifi"
+   },
+   {
+    "Address": "https://appcompatibility.myharmony.com/prod/compatibility.json",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "AppCompatability/MobileCtrlQL",
+    "Name": "MobileCtrlQL"
+   },
+   {
+    "Address": "https://appcompatibility.myharmony.com/prod/Olive/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "AppCompatability/DeLinkMessage",
+    "Name": "DeLinkMessage"
+   },
+   {
+    "Address": "https://rcbu-prod-ssl-amr.myharmony.com/Device/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "AWSServices/DeviceIcon",
+    "Name": "DeviceIcon"
+   },
+   {
+    "Address": "https://rcbu-prod-ssl-amr.myharmony.com/Config/HCMapper.json",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "AWSServices/HCMapper",
+    "Name": "HCMapper"
+   },
+   {
+    "Address": "https://rcbu-prod-ssl-amr.myharmony.com/Config/SystemConfig.json",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "AWSServices/SystemConfig",
+    "Name": "SystemConfig"
+   },
+   {
+    "Address": "https://accounts.logi.com/identity/verify",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "LIPService/verify",
+    "Name": "verify"
+   },
+   {
+    "Address": "https://accounts.logi.com/identity/userinfo",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "LIPService/userinfo",
+    "Name": "userinfo"
+   },
+   {
+    "Address": "https://accounts.logi.com/identity/signout",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "LIPService/signout",
+    "Name": "signout"
+   },
+   {
+    "Address": "https://accounts.logi.com/identity/refresh",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "LIPService/refresh",
+    "Name": "refresh"
+   },
+   {
+    "Address": "https://accounts.logi.com/identity/changePassword",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "LIPService/change",
+    "Name": "change"
+   },
+   {
+    "Address": "https://accounts.logi.com/identity/forgot",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "LIPService/forgot",
+    "Name": "forgot"
+   },
+   {
+    "Address": "https://accounts.logi.com/identity/reset",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "LIPService/reset",
+    "Name": "reset"
+   },
+   {
+    "Address": "https://accounts.logi.com/identity/activate",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "LIPService/activate",
+    "Name": "activate"
+   },
+   {
+    "Address": "https://accounts.logi.com/identity/signin",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "LIPService/signin",
+    "Name": "signin"
+   },
+   {
+    "Address": "https://accounts.logi.com/identity/changeclaims",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "LIPService/changeclaims",
+    "Name": "changeclaims"
+   },
+   {
+    "Address": "https://accounts.logi.com/identity/resendVerificationEmail",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "LIPService/resend",
+    "Name": "resend"
+   },
+   {
+    "Address": "https://accounts.logi.com/identity/keys",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "LIPService/keys",
+    "Name": "keys"
+   },
+   {
+    "Address": "https://accounts.logi.com/identity/mail",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "LIPService/mail",
+    "Name": "mail"
+   },
+   {
+    "Address": "https://accounts.logi.com/identity/changeAppClaims",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "LIPService/applicationclaims",
+    "Name": "applicationclaims"
+   },
+   {
+    "Address": "https://accounts.logi.com/identity/oauth2/token",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "LIPService/token",
+    "Name": "token"
+   },
+   {
+    "Address": "https://accounts.logi.com/websso/signout",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "LIPService/webssosignout",
+    "Name": "webssosignout"
+   },
+   {
+    "Address": "https://id.logi.com/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "LIPService/WebSSO",
+    "Name": "WebSSO"
+   },
+   {
+    "Address": "https://id.logi.com/my-account",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "LIPService/AccountInfo",
+    "Name": "AccountInfo"
+   },
+   {
+    "Address": "https://pro.myharmony.com/bpi/identity/profile/{installerId}?client_id=d977452e-29a7-4391-b9c5-7c6b55d2bdb3",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "InstallerService/installerinfo",
+    "Name": "installerinfo"
+   },
+   {
+    "Address": "https://pro.myharmony.com/api/identity/profile/{installerId}?client_id=9417230a-5857-4845-bdc3-504dfd316222",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "InstallerService/hpinstallerinfo",
+    "Name": "hpinstallerinfo"
+   },
+   {
+    "Address": "http://memlip.myharmony.com:11211/HostName",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "MemCacheServer/HostName",
+    "Name": "HostName"
+   },
+   {
+    "Address": "https://files.myharmony.com/Assets/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UIAssets/AssetBaseUri",
+    "Name": "AssetBaseUri"
+   },
+   {
+    "Address": "https://www.logitech.com/legal/product-privacy-policy.html",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "PrivacyPolicy/PrivacyPolicyUri",
+    "Name": "PrivacyPolicyUri"
+   },
+   {
+    "Address": "https://files.myharmony.com/Assets/legal/{0}/termsofuse.html",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "TermsofService/TermsofServiceUri",
+    "Name": "TermsofServiceUri"
+   },
+   {
+    "Address": "https://files.myharmony.com/Assets/legal/{0}/harmony.html",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "SLA/SLAUri",
+    "Name": "SLAUri"
+   },
+   {
+    "Address": "https://ems.myharmony.com/1.0/sendMail",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "EmailService/sendMail",
+    "Name": "sendMail"
+   }
+  ],
+  "JsonServices": [
+   {
+    "Address": "https://cf-svcs.myharmony.com/Discovery/Discovery.svc",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "CloudFront/Discovery",
+    "Name": "Discovery"
+   },
+   {
+    "Address": "http://revue.logitech.com/DigitalHome/tv/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "DigitalHome/GetSupportPolicy2",
+    "Name": "GetSupportPolicy2"
+   },
+   {
+    "Address": "http://revue.logitech.com/DigitalHome/tv/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "DigitalHome/UpdateWarrantyLog",
+    "Name": "UpdateWarrantyLog"
+   },
+   {
+    "Address": "http://revue.logitech.com/DigitalHome/tv/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "DigitalHome/LogSupportRequest",
+    "Name": "LogSupportRequest"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/AccountManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "AccountManager/Ping",
+    "Name": "Ping"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/AccountManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "AccountManager/Impersonate",
+    "Name": "Impersonate"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/AccountManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "AccountManager/GetMyAccount",
+    "Name": "GetMyAccount"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/AccountManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "AccountManager/UpdatePasswordByPasswordAnswer",
+    "Name": "UpdatePasswordByPasswordAnswer"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/AccountManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "AccountManager/UpdatePasswordByOldPassword",
+    "Name": "UpdatePasswordByOldPassword"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/AccountManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "AccountManager/UpdatePasswordQuestionAndAnswer",
+    "Name": "UpdatePasswordQuestionAndAnswer"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/AccountManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "AccountManager/GetPasswordQuestion",
+    "Name": "GetPasswordQuestion"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/AccountManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "AccountManager/AddSetupRating",
+    "Name": "AddSetupRating"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/AccountManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "AccountManager/GetMyHousehold",
+    "Name": "GetMyHousehold"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/AccountManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "AccountManager/UpdateMyAccountProperties",
+    "Name": "UpdateMyAccountProperties"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/AccountManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "AccountManager/UpdateAccountProperties",
+    "Name": "UpdateAccountProperties"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/AccountManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "AccountManager/SecureControllerHandshake",
+    "Name": "SecureControllerHandshake"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/AccountManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "AccountManager/SecureControllerCreateAccount",
+    "Name": "SecureControllerCreateAccount"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/AccountManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "AccountManager/SecureControllerLogin",
+    "Name": "SecureControllerLogin"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/AccountManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "AccountManager/GetCustomerSupportPolicy",
+    "Name": "GetCustomerSupportPolicy"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/AccountManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "AccountManager/GetCustomerSupportPolicyByAccountId",
+    "Name": "GetCustomerSupportPolicyByAccountId"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/AccountManager.svc/json/Remote/{remoteId}/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "AccountManager/Context",
+    "Name": "Context"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/AccountManager.svc/json//account/{account_id}/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "AccountManager/setupSession",
+    "Name": "setupSession"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/AccountManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "AccountManager/GetEmailPreferences",
+    "Name": "GetEmailPreferences"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/AccountManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "AccountManager/SaveEmailPreferences",
+    "Name": "SaveEmailPreferences"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/AccountManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "AccountManager/UpdateUserProperties",
+    "Name": "UpdateUserProperties"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/AccountManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "AccountManager/RemoveAccountFromHousehold",
+    "Name": "RemoveAccountFromHousehold"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/DeviceManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "DeviceManager/Ping",
+    "Name": "Ping"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/DeviceManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "DeviceManager/UpdateMyData",
+    "Name": "UpdateMyData"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/DeviceManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "DeviceManager/UpdateMultiple",
+    "Name": "UpdateMultiple"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/DeviceManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "DeviceManager/UpdateMyDataRetrievingDevices",
+    "Name": "UpdateMyDataRetrievingDevices"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/DeviceManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "DeviceManager/UpdateMyDataRetrievingDevicesByAccountId",
+    "Name": "UpdateMyDataRetrievingDevicesByAccountId"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/DeviceManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "DeviceManager/GetDevice",
+    "Name": "GetDevice"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/DeviceManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "DeviceManager/GetMyDevices",
+    "Name": "GetMyDevices"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/DeviceManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "DeviceManager/GetDevices",
+    "Name": "GetDevices"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/DeviceManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "DeviceManager/GetChannelTuningFeature",
+    "Name": "GetChannelTuningFeature"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/DeviceManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "DeviceManager/GetCommands",
+    "Name": "GetCommands"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/DeviceManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "DeviceManager/AnalyzeIR",
+    "Name": "AnalyzeIR"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/DeviceManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "DeviceManager/GetDeviceTypeProperties",
+    "Name": "GetDeviceTypeProperties"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/DeviceManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "DeviceManager/GetAllTeachingCommands",
+    "Name": "GetAllTeachingCommands"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/DeviceManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "DeviceManager/GetAllTeachingCommandsForGivenPowerAndInputTypes",
+    "Name": "GetAllTeachingCommandsForGivenPowerAndInputTypes"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/DeviceManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "DeviceManager/GetAllTeachingCommandsForGivenDeviceInformation",
+    "Name": "GetAllTeachingCommandsForGivenDeviceInformation"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/DeviceManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "DeviceManager/GetBrandNamesByDeviceTypes",
+    "Name": "GetBrandNamesByDeviceTypes"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/DeviceManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "DeviceManager/SearchPublicDevices",
+    "Name": "SearchPublicDevices"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/DeviceManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "DeviceManager/SearchManufacturers",
+    "Name": "SearchManufacturers"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/DeviceManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "DeviceManager/SearchGlobalDevicesByEdid",
+    "Name": "SearchGlobalDevicesByEdid"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/DeviceManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "DeviceManager/SearchGlobalDevicesWithFilterMaxResults",
+    "Name": "SearchGlobalDevicesWithFilterMaxResults"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/DeviceManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "DeviceManager/SearchGlobalDevices",
+    "Name": "SearchGlobalDevices"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/DeviceManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "DeviceManager/SearchGlobalDevicesByClassification",
+    "Name": "SearchGlobalDevicesByClassification"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/DeviceManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "DeviceManager/SearchGlobalDevicesByClassificationAndSearchType",
+    "Name": "SearchGlobalDevicesByClassificationAndSearchType"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/DeviceManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "DeviceManager/ValidateDevice",
+    "Name": "ValidateDevice"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/DeviceManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "DeviceManager/DetectLanguage",
+    "Name": "DetectLanguage"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/DeviceManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "DeviceManager/DetectLanguageForConnectedRemote",
+    "Name": "DetectLanguageForConnectedRemote"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/DeviceManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "DeviceManager/DetectLanguageForMultiCodeDevice",
+    "Name": "DetectLanguageForMultiCodeDevice"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/DeviceManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "DeviceManager/SearchGlobalDevicesByEdid",
+    "Name": "SearchGlobalDevicesByEdid"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/DeviceManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "DeviceManager/SearchIPScanDevices",
+    "Name": "SearchIPScanDevices"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/DeviceManager.svc/json/Account/{accountId}/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "DeviceManager/ProtocolList",
+    "Name": "ProtocolList"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/DeviceManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "DeviceManager/GetGlobalDevices",
+    "Name": "GetGlobalDevices"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/DeviceManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "DeviceManager/GetManufacturers",
+    "Name": "GetManufacturers"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/DeviceManager.svc/json/SearchDevice/manf/{manufacturer}/model/{modelNumber}/iface/{iface}",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "DeviceManager/SearchDevice",
+    "Name": "SearchDevice"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/DeviceManager.svc/json/GetGlobalDevicesByAccountAndGlobalDeviceID?accountId={accountId}",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "DeviceManager/GetGlobalDevicesByAccountAndGlobalDeviceID",
+    "Name": "GetGlobalDevicesByAccountAndGlobalDeviceID"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/InternalDeviceManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "InternalDeviceManager/Ping",
+    "Name": "Ping"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/GlobalDeviceManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "GlobalDeviceManager/Ping",
+    "Name": "Ping"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/GlobalDeviceManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "GlobalDeviceManager/GetInputInfo",
+    "Name": "GetInputInfo"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/GlobalDeviceManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "GlobalDeviceManager/GetDeviceInputType",
+    "Name": "GetDeviceInputType"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/RemotePlatform/RemoteManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "RemoteManager/Ping",
+    "Name": "Ping"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/RemotePlatform/RemoteManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "RemoteManager/RegisterSuccessfulCompile",
+    "Name": "RegisterSuccessfulCompile"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/RemotePlatform/RemoteManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "RemoteManager/AcceptLicenseAgreement",
+    "Name": "AcceptLicenseAgreement"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/RemotePlatform/RemoteManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "RemoteManager/AddRemote",
+    "Name": "AddRemote"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/RemotePlatform/RemoteManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "RemoteManager/AddRemoteToAccount",
+    "Name": "AddRemoteToAccount"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/RemotePlatform/RemoteManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "RemoteManager/GetDongles",
+    "Name": "GetDongles"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/RemotePlatform/RemoteManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "RemoteManager/SaveDongles",
+    "Name": "SaveDongles"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/RemotePlatform/RemoteManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "RemoteManager/GetRemote",
+    "Name": "GetRemote"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/RemotePlatform/RemoteManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "RemoteManager/NotifySyncStatus",
+    "Name": "NotifySyncStatus"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/RemotePlatform/RemoteManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "RemoteManager/GetSyncStatus",
+    "Name": "GetSyncStatus"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/RemotePlatform/RemoteManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "RemoteManager/SetRemoteSyncRequired",
+    "Name": "SetRemoteSyncRequired"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/RemotePlatform/RemoteManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "RemoteManager/SavePairings",
+    "Name": "SavePairings"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/RemotePlatform/RemoteManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "RemoteManager/AddHubToAccount",
+    "Name": "AddHubToAccount"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/RemotePlatform/RemoteManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "RemoteManager/RegisterSuccessfulSync",
+    "Name": "RegisterSuccessfulSync"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/LoggingPlatform/LoggingManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "LoggingManager/Ping",
+    "Name": "Ping"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/LoggingPlatform/LoggingManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "LoggingManager/SubmitUserDataLogs",
+    "Name": "SubmitUserDataLogs"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/LoggingPlatform/LoggingManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "LoggingManager/SubmitClientUserDataLogs",
+    "Name": "SubmitClientUserDataLogs"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/Discovery/Discovery.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "Discovery/GetSoapServices",
+    "Name": "GetSoapServices"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/Discovery/Discovery.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "Discovery/GetJsonOperations",
+    "Name": "GetJsonOperations"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/Discovery/Discovery.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "Discovery/GetBinaryOperations",
+    "Name": "GetBinaryOperations"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/Discovery/Discovery.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "Discovery/GetJson2Uris",
+    "Name": "GetJson2Uris"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/SyncPlatform/CompileManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "CompileManager/Ping",
+    "Name": "Ping"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/SyncPlatform/CompileManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "CompileManager/StartCompile",
+    "Name": "StartCompile"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/SyncPlatform/CompileManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "CompileManager/IsRemoteSyncRequired",
+    "Name": "IsRemoteSyncRequired"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/SyncPlatform/CompileManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "CompileManager/GetConnectedRemoteConfig",
+    "Name": "GetConnectedRemoteConfig"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/SyncPlatform/CompileManager.svc/json/Remote/{remoteId}/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "CompileManager/CommandList",
+    "Name": "CommandList"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/SyncPlatform/DeletionManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "DeletionManager/DeleteDevices",
+    "Name": "DeleteDevices"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/SyncPlatform/DeletionManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "DeletionManager/DeleteActivities",
+    "Name": "DeleteActivities"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/GuidePlatform/GuideManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "GuideManager/Ping",
+    "Name": "Ping"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/GuidePlatform/GuideManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "GuideManager/SearchIcon",
+    "Name": "SearchIcon"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/AggregationPlatform/AggregationManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "AggregationManager/Ping",
+    "Name": "Ping"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/AggregationPlatform/AggregationManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "AggregationManager/GetSampleModelNumber",
+    "Name": "GetSampleModelNumber"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/AggregationPlatform/AggregationManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "AggregationManager/GetBrandNamesByDeviceCategory",
+    "Name": "GetBrandNamesByDeviceCategory"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/AggregationPlatform/AggregationManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "AggregationManager/GetModelNumbersByServiceProvider",
+    "Name": "GetModelNumbersByServiceProvider"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/AggregationPlatform/AggregationManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "AggregationManager/GetServiceProviderEquipment",
+    "Name": "GetServiceProviderEquipment"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/InfraredAnalysisPlatform/InfraredAnalysisManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "InfraredAnalysisManager/Ping",
+    "Name": "Ping"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/InfraredAnalysisPlatform/InfraredAnalysisManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "InfraredAnalysisManager/AnalyzeInfrared",
+    "Name": "AnalyzeInfrared"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/InfraredAnalysisPlatform/InfraredAnalysisManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "InfraredAnalysisManager/SaveTeachingRequest",
+    "Name": "SaveTeachingRequest"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/InfraredAnalysisPlatform/InfraredAnalysisManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "InfraredAnalysisManager/GetTeachingRequest",
+    "Name": "GetTeachingRequest"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/InfraredAnalysisPlatform/InfraredAnalysisManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "InfraredAnalysisManager/GetTeachingStatus",
+    "Name": "GetTeachingStatus"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/InfraredAnalysisPlatform/InfraredAnalysisManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "InfraredAnalysisManager/SaveTeachingStatus",
+    "Name": "SaveTeachingStatus"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserFeaturePlatform/UserFeatureManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserFeatureManager/Ping",
+    "Name": "Ping"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserFeaturePlatform/UserFeatureManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserFeatureManager/SaveUserFeatures",
+    "Name": "SaveUserFeatures"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserFeaturePlatform/UserFeatureManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserFeatureManager/GetUserFeatures",
+    "Name": "GetUserFeatures"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserFeaturePlatform/UserFeatureManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserFeatureManager/DeleteUserFeatures",
+    "Name": "DeleteUserFeatures"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserFeaturePlatform/UserFeatureManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserFeatureManager/CopyFeaturesFromGlobalDevice",
+    "Name": "CopyFeaturesFromGlobalDevice"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserFeaturePlatform/GlobalFeatureManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "GlobalFeatureManager/GetGlobalFeatures",
+    "Name": "GetGlobalFeatures"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserButtonMappingPlatform/UserButtonMappingManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserButtonMappingManager/Ping",
+    "Name": "Ping"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserButtonMappingPlatform/UserButtonMappingManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserButtonMappingManager/GetDefaultButtonMaps",
+    "Name": "GetDefaultButtonMaps"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserButtonMappingPlatform/UserButtonMappingManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserButtonMappingManager/GetRemoteCanvas",
+    "Name": "GetRemoteCanvas"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserButtonMappingPlatform/UserButtonMappingManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserButtonMappingManager/SaveButtonMaps",
+    "Name": "SaveButtonMaps"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserButtonMappingPlatform/UserButtonMappingManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserButtonMappingManager/GetButtonMaps",
+    "Name": "GetButtonMaps"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserButtonMappingPlatform/UserButtonMappingManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserButtonMappingManager/GetRemoteEmulatorButtons",
+    "Name": "GetRemoteEmulatorButtons"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserButtonMappingPlatform/UserButtonMappingManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserButtonMappingManager/GetRootDeviceModeButtonMap",
+    "Name": "GetRootDeviceModeButtonMap"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserButtonMappingPlatform/UserButtonMappingManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "RemoteManager/GetRootButtonMap",
+    "Name": "GetRootDeviceModeButtonMap"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserButtonMappingPlatform/UserButtonMappingManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserButtonMappingManager/GetRootButtonMapForSurface",
+    "Name": "GetRootButtonMapForSurface"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserButtonMappingPlatform/UserButtonMappingManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserButtonMappingManager/GetDeviceModeButtonMaps",
+    "Name": "GetDeviceModeButtonMaps"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserButtonMappingPlatform/UserButtonMappingManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "RemoteManager/GetButtonMaps",
+    "Name": "GetDeviceModeButtonMaps"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserButtonMappingPlatform/UserButtonMappingManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserButtonMappingManager/UpdateDeviceModeButtonMaps",
+    "Name": "UpdateDeviceModeButtonMaps"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserButtonMappingPlatform/UserButtonMappingManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "RemoteManager/UpdateButtonMaps",
+    "Name": "UpdateDeviceModeButtonMaps"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserButtonMappingPlatform/UserButtonMappingManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserButtonMappingManager/ResetToDefaultDeviceModeButtonMaps",
+    "Name": "ResetToDefaultDeviceModeButtonMaps"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserButtonMappingPlatform/UserButtonMappingManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "RemoteManager/ResetToDefaultButtonMaps",
+    "Name": "ResetToDefaultDeviceModeButtonMaps"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserButtonMappingPlatform/UserButtonMappingManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserButtonMappingManager/DeleteDeviceModeButtonMaps",
+    "Name": "DeleteDeviceModeButtonMaps"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserButtonMappingPlatform/UserButtonMappingManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "RemoteManager/DeleteButtonMaps",
+    "Name": "DeleteDeviceModeButtonMaps"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserButtonMappingPlatform/UserButtonMappingManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserButtonMappingManager/DeleteTaughtDeviceModeCommandButtonMaps",
+    "Name": "DeleteTaughtDeviceModeCommandButtonMaps"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserButtonMappingPlatform/UserButtonMappingManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "RemoteManager/DeleteTaughtCommandButtonMaps",
+    "Name": "DeleteTaughtDeviceModeCommandButtonMaps"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserButtonMappingPlatform/UserButtonMappingManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserButtonMappingManager/UpdateUserModeMapping",
+    "Name": "UpdateUserModeMapping"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserButtonMappingPlatform/UserButtonMappingManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "RemoteManager/UpdateUserModeMapping",
+    "Name": "UpdateUserModeMapping"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserButtonMappingPlatform/UserButtonMappingManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserButtonMappingManager/DeleteUserModeMapping",
+    "Name": "DeleteUserModeMapping"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserButtonMappingPlatform/UserButtonMappingManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "RemoteManager/DeleteUserModeMapping",
+    "Name": "DeleteUserModeMapping"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserButtonMappingPlatform/FunctionMappingManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "FunctionMappingManager/Ping",
+    "Name": "Ping"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserButtonMappingPlatform/FunctionMappingManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "FunctionMappingManager/GetFunctionMaps",
+    "Name": "GetFunctionMaps"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/CompositeSecurityServices/Security.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "Security/Ping",
+    "Name": "Ping"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/CompositeSecurityServices/Security.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "Security/GetUserAuthToken",
+    "Name": "GetUserAuthToken"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/CompositeSecurityServices/Security.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "Security/GetAuthenticatedUserAuthToken",
+    "Name": "GetAuthenticatedUserAuthToken"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/CompositeSecurityServices/Security.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "Security/LoginForHubSetup",
+    "Name": "LoginForHubSetup"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/CompositeSecurityServices/Security.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "Security/SendPasswordResetMail",
+    "Name": "SendPasswordResetMail"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/CompositeSecurityServices/Security.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "Security/ResetPassword",
+    "Name": "ResetPassword"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/CompositeSecurityServices/Security.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "Security/LoginWithEmailToken",
+    "Name": "LoginWithEmailToken"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/CompositeSecurityServices/Security.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "Security/LoginUser",
+    "Name": "LoginUser"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/CompositeSecurityServices/Security.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "Security/Logout",
+    "Name": "Logout"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/CompositeSecurityServices/Security.svc/json/signin",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "Security/SignIn",
+    "Name": "SignIn"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/CompositeSecurityServices/Security.svc/json/get-impersonate-token",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "Security/GetImpersonateToken",
+    "Name": "GetImpersonateToken"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/CompositeSecurityServices/Security.svc/json/authorize",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "Security/Authorize",
+    "Name": "Authorize"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/CompositeSecurityServices/Security.svc/json/signin-installertoken",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "Security/SignInWithInstallerToken",
+    "Name": "SignInWithInstallerToken"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/CompositeSecurityServices/Security.svc/LinkSecurity/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "LinkSecurity/Handshake",
+    "Name": "Handshake"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/CompositeSecurityServices/Security.svc/LinkSecurity/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "LinkSecurity/GtvCreateAccount",
+    "Name": "GtvCreateAccount"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/CompositeSecurityServices/Security.svc/LinkSecurity/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "LinkSecurity/GtvFindOrCreateAccount",
+    "Name": "GtvFindOrCreateAccount"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/CompositeSecurityServices/Security.svc/LinkSecurity/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "LinkSecurity/GtvLogin",
+    "Name": "GtvLogin"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/CompositeSecurityServices/Security.svc/LinkSecurity/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "LinkSecurity/GtvAuthenticateAndLogin",
+    "Name": "GtvAuthenticateAndLogin"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/CompositeSecurityServices/Security.svc/LinkSecurity/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "LinkSecurity/LoginWithUserAuthToken",
+    "Name": "LoginWithUserAuthToken"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/CompositeSecurityServices/Security.svc/LinkSecurity/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "LinkSecurity/Login",
+    "Name": "Login"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/ProductsPlatform/ProductsManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "ProductsManager/Ping",
+    "Name": "Ping"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/ProductsPlatform/ProductsManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "ProductsManager/GetCustomerSupportPolicyByMemberWeb",
+    "Name": "GetCustomerSupportPolicyByMemberWeb"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/ProductsPlatform/ProductsManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "ProductsManager/GetCustomerSupportPolicyByCustomerSupportDetail",
+    "Name": "GetCustomerSupportPolicyByCustomerSupportDetail"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/ProductsPlatform/ProductsManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "ProductsManager/GetHarmonyProducts",
+    "Name": "GetHarmonyProducts"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/ProductsPlatform/ProductsManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "ProductsManager/GetProduct",
+    "Name": "GetProduct"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/ProductsPlatform/ProductsManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "ProductsManager/GetProductButtonList",
+    "Name": "GetProductButtonList"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/ProductsPlatform/ProductsManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "ProductsManager/GetProductByProductId",
+    "Name": "GetProductByProductId"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/ProductsPlatform/ProductsManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "ProductsManager/GetProductSettings",
+    "Name": "GetProductSettings"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/ProductsPlatform/ProductsManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "ProductsManager/GetAllProducts",
+    "Name": "GetAllProducts"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/ProductsPlatform/ProductsManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "ProductsManager/GetProductUsingProductIdentifier",
+    "Name": "GetProductUsingProductIdentifier"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/ProductsPlatform/ProductsManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "ProductsManager/GetSupportPolicies",
+    "Name": "GetSupportPolicies"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/ProductsPlatform/InternalProductsManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "InternalProductsManager/Ping",
+    "Name": "Ping"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/Ping",
+    "Name": "Ping"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json/Account/{accountId}/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/DeviceList",
+    "Name": "DeviceList"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json/Account/{accountId}/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/SettingList",
+    "Name": "SettingList"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json/Account/{accountId}/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/MapList",
+    "Name": "MapList"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json/Account/{accountId}/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/FunctionList",
+    "Name": "FunctionList"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json/Account/{accountId}/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/ActivityList",
+    "Name": "ActivityList"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json/Account/{accountId}/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/ProtocolList",
+    "Name": "ProtocolList"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json/Account/{accountId}/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/CapabilityList",
+    "Name": "CapabilityList"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/UpdateMyData",
+    "Name": "UpdateMyData"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/HouseholdCapabilityList",
+    "Name": "HouseholdCapabilityList"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/SaveActivities",
+    "Name": "SaveActivities"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/SubmitUserDataLogs",
+    "Name": "SubmitUserDataLogs"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/GetCustomerSupportPolicyByAccountId",
+    "Name": "GetCustomerSupportPolicyByAccountId"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/EndTeachingSession",
+    "Name": "EndTeachingSession"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/StartTeachingSession",
+    "Name": "StartTeachingSession"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/UpdateDevices",
+    "Name": "UpdateDevices"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/UpdateDeviceCommands",
+    "Name": "UpdateDeviceCommands"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/AddRemoteByCertificate",
+    "Name": "AddRemoteByCertificate"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/ListFilesFromS3Bucket",
+    "Name": "ListFilesFromS3Bucket"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/UploadFileToS3Bucket",
+    "Name": "UploadFileToS3Bucket"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/DeleteObjectInS3Bucket",
+    "Name": "DeleteObjectInS3Bucket"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/AddHubToAccount",
+    "Name": "AddHubToAccount"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/GetAccountProducts",
+    "Name": "GetAccountProducts"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/GetButtonMaps",
+    "Name": "GetButtonMaps"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/UpdateCommand",
+    "Name": "UpdateCommand"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/GetRecommendedActivities",
+    "Name": "GetRecommendedActivities"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/GetActivityRoles",
+    "Name": "GetActivityRoles"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/GetRecommendedActivityTypes",
+    "Name": "GetRecommendedActivityTypes"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/GetActivityTypeRoles",
+    "Name": "GetActivityTypeRoles"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/GetActivityTypesAndRoles",
+    "Name": "GetActivityTypesAndRoles"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json/Account/{accountId}/Remote/{remoteId}/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/Settings",
+    "Name": "Settings"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json/Account/{accountId}/Remote/{remoteId}/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/RegisterSuccessfulSync",
+    "Name": "RegisterSuccessfulSync"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/GetSmartTVMenuNames",
+    "Name": "GetSmartTVMenuNames"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/UpgradeConfig",
+    "Name": "UpgradeConfig"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/ProvisionHub",
+    "Name": "ProvisionHub"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/GetGlobalRemote",
+    "Name": "GetGlobalRemote"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/GetHubCloudToken",
+    "Name": "GetHubCloudToken"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/PowerOnCommandList",
+    "Name": "PowerOnCommandList"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/RefineActivity",
+    "Name": "RefineActivity"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/SimpleRestSaveActivities",
+    "Name": "SimpleRestSaveActivities"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json/Account/{accountId}/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/SimpleRestGetActivities",
+    "Name": "SimpleRestGetActivities"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json/Account/{accountId}/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/SimpleRestSaveDeviceAndFeatures",
+    "Name": "SimpleRestSaveDeviceAndFeatures"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json/Account/{accountId}/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/SimpleRestGetDeviceList",
+    "Name": "SimpleRestGetDeviceList"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/SimpleRestGetHouseholdProducts",
+    "Name": "SimpleRestGetHouseholdProducts"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json/installer-userdetails",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/GetInstallerMappedUsers",
+    "Name": "GetInstallerMappedUsers"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json/useraccountdetails",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/GetUserAccountDetails",
+    "Name": "GetUserAccountDetails"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json/checkuserdetails",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/CheckUserDetails",
+    "Name": "CheckUserDetails"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json/importusers",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/ImportUsers",
+    "Name": "ImportUsers"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector/GetWarrantyDetails",
+    "Name": "GetWarrantyDetails"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/EasyZapperPlatform/EasyZapperManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "EasyZapperManager/CheckEasyZapperAccount",
+    "Name": "CheckEasyZapperAccount"
+   },
+   {
+    "Address": "http://svcs.myharmony.com/InternalHarmonyPlatform/InternalSystemManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "InternalSystemManager/Ping",
+    "Name": "Ping"
+   },
+   {
+    "Address": "http://svcs.myharmony.com/InternalHarmonyPlatform/InternalSystemManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "InternalSystemManager/GetDisabledCompileQueues",
+    "Name": "GetDisabledCompileQueues"
+   },
+   {
+    "Address": "http://svcs.myharmony.com/InternalHarmonyPlatform/InternalSystemManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "InternalSystemManager/SetDisabledCompileQueues",
+    "Name": "SetDisabledCompileQueues"
+   },
+   {
+    "Address": "http://svcs.myharmony.com/InternalHarmonyPlatform/InternalSystemManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "InternalSystemManager/DecryptImpersonationToken",
+    "Name": "DecryptImpersonationToken"
+   },
+   {
+    "Address": "http://svcs.myharmony.com/InternalHarmonyPlatform/InternalSystemManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "InternalSystemManager/SetUserLanguageToGlobalLanguage",
+    "Name": "SetUserLanguageToGlobalLanguage"
+   },
+   {
+    "Address": "http://svcs.myharmony.com/InternalHarmonyPlatform/InternalSystemManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "InternalSystemManager/GetGlobalDeviceIdByAliasName",
+    "Name": "GetGlobalDeviceIdByAliasName"
+   },
+   {
+    "Address": "http://svcs.myharmony.com/InternalHarmonyPlatform/InternalSystemManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "InternalSystemManager/CheckNetricsAvailability",
+    "Name": "CheckNetricsAvailability"
+   },
+   {
+    "Address": "http://svcs.myharmony.com/InternalHarmonyPlatform/InternalSystemManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "InternalSystemManager/UpdateNetrics",
+    "Name": "UpdateNetrics"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/ActivityPlatform/ActivityManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "ActivityManager/Ping",
+    "Name": "Ping"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/ActivityPlatform/ActivityManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "ActivityManager/SimpleGetActivities",
+    "Name": "SimpleGetActivities"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/ActivityPlatform/ActivityManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "ActivityManager/GetActivities",
+    "Name": "GetActivities"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/ActivityPlatform/ActivityManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "ActivityManager/SaveActivities",
+    "Name": "SaveActivities"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/ActivityPlatform/ActivityManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "ActivityManager/DeleteActivities",
+    "Name": "DeleteActivities"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/ActivityPlatform/ActivityManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "ActivityManager/ResetActivitiesToDefault",
+    "Name": "ResetActivitiesToDefault"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/ActivityPlatform/ActivityManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "ActivityManager/GetRecommendedActivitiesFromDevices",
+    "Name": "GetRecommendedActivitiesFromDevices"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/ActivityPlatform/ActivityManager.svc/json/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "ActivityManager/GetActivityRoles",
+    "Name": "GetActivityRoles"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/ActivityPlatform/ActivityManager.svc/json/Account/{accountId}/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "ActivityManager/ActivityList",
+    "Name": "ActivityList"
+   },
+   {
+    "Address": "https://files.myharmony.com/Assets/Firmware/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "DigitalHome/Firmware",
+    "Name": "Firmware"
+   },
+   {
+    "Address": "http://files.myharmony.com/Assets/Firmware/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "DigitalHome/Firmware",
+    "Name": "Firmware"
+   },
+   {
+    "Address": "http://web-hush-int.dynamite.myharmony.com/secure/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "WebPushService/Api",
+    "Name": "Api"
+   },
+   {
+    "Address": "http://xmpp-hush-int.dynamite.myharmony.com/source/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "XmppPushService/Source",
+    "Name": "Source"
+   },
+   {
+    "Address": "https://sus.dhg.myharmony.com/SoftwareUpdatesPlatform/SoftwareUpdates/product/{productId}/unit/{unitId}/image/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "SoftwareUpdateService/Latest",
+    "Name": "Latest"
+   },
+   {
+    "Address": "https://sus.dhg.myharmony.com/SoftwareUpdatesPlatform/SoftwareUpdates/product/{productId}/unit/{unitId}/streams",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "SoftwareUpdateService/Streams",
+    "Name": "Streams"
+   },
+   {
+    "Address": "https://sus.dhg.myharmony.com/SoftwareUpdatesPlatform/SoftwareUpdates/product/{productId}/unit/{unitId}/features",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "SoftwareUpdateService/Features",
+    "Name": "Features"
+   },
+   {
+    "Address": "https://sus.dhg.myharmony.com/SoftwareUpdatesPlatform/SoftwareUpdates/product/{productId}/unit/{unitId}/info",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "SoftwareUpdateService/FirmwareInfo",
+    "Name": "FirmwareInfo"
+   },
+   {
+    "Address": "https://sus.dhg.myharmony.com/SoftwareUpdatesPlatform/SoftwareUpdates/getUpdates",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "SoftwareUpdateService/GetUpdates",
+    "Name": "GetUpdates"
+   },
+   {
+    "Address": "https://content.dhg.myharmony.com/1.0/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "ContentService/Country",
+    "Name": "Country"
+   },
+   {
+    "Address": "https://content.dhg.myharmony.com/1.0/User;{userProfileUri}",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "ContentService/User",
+    "Name": "User"
+   },
+   {
+    "Address": "https://content.dhg.myharmony.com/1.0/Device;{deviceProfileUri}",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "ContentService/Device",
+    "Name": "Device"
+   },
+   {
+    "Address": "https://content.dhg.myharmony.com/1.0/Service/{providerId}",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "ContentService/Service",
+    "Name": "Service"
+   },
+   {
+    "Address": "https://content.dhg.myharmony.com/1.0/Country/{countryCode}/Region/{zipcode}",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "ContentService/Provider",
+    "Name": "Provider"
+   },
+   {
+    "Address": "https://content.dhg.myharmony.com/1.0/config;{accountUri}",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "ContentService/config",
+    "Name": "config"
+   },
+   {
+    "Address": "https://d1tk8oqnnsddt5.cloudfront.net/1.0/station/{stationId}/image;maxX=40;maxY=40",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "ContentImageService/Image",
+    "Name": "Image"
+   },
+   {
+    "Address": "https://d1tk8oqnnsddt5.cloudfront.net/1.0/externalImage/{sourceUri};maxX={width};maxY={height}",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "ContentImageService/ExternalImage",
+    "Name": "ExternalImage"
+   },
+   {
+    "Address": "https://content.dhg.myharmony.com/1.0/Config;{accountUri}",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "HomeAutomationService/Config",
+    "Name": "Config"
+   },
+   {
+    "Address": "https://logs-01.loggly.com/inputs/2cd74ba5-d000-4c36-bbc6-55577dc27a91/tag/embeddedclient",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "Loggly/EmbeddedClient",
+    "Name": "EmbeddedClient"
+   },
+   {
+    "Address": "https://logs-01.loggly.com/inputs/2cd74ba5-d000-4c36-bbc6-55577dc27a91/tag/silverlightclient",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "Loggly/HarmonyClient",
+    "Name": "HarmonyClient"
+   },
+   {
+    "Address": "https://logging.dhg.myharmony.com/1.0/logger/submitUsageData",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "LoggingService/SubmitUsageData",
+    "Name": "SubmitUsageData"
+   },
+   {
+    "Address": "https://logging.dhg.myharmony.com/1.0/logger/submitLogEvents",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "LoggingService/SubmitLogEvents",
+    "Name": "SubmitLogEvents"
+   },
+   {
+    "Address": "https://logging.dhg.myharmony.com/1.0/logger/submitHubLog",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "LoggingService/EmbeddedClient",
+    "Name": "EmbeddedClient"
+   },
+   {
+    "Address": "https://logging.dhg.myharmony.com/1.0/logger/submitClientLog",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "LoggingService/HarmonyClient",
+    "Name": "HarmonyClient"
+   },
+   {
+    "Address": "https://d1tk8oqnnsddt5.cloudfront.net/1.0/faq/device/manufacturer/{0}/model/{1}?product={2}",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "FAQServices/FAQ",
+    "Name": "FAQ"
+   },
+   {
+    "Address": "https://hercules.myharmony.com/popularApps",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "AutoActivityService/popularApps",
+    "Name": "popularApps"
+   },
+   {
+    "Address": "https://hercules.myharmony.com/popularSonosFavorites",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "AutoActivityService/popularSonosFavorites",
+    "Name": "popularSonosFavorites"
+   },
+   {
+    "Address": "https://hercules.myharmony.com/api/activity/refine",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "AutoActivityService/refineActivities",
+    "Name": "refineActivities"
+   },
+   {
+    "Address": "https://hercules.myharmony.com/api/popular-favorites",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "AutoActivityService/popularFavorites",
+    "Name": "popularFavorites"
+   },
+   {
+    "Address": "https://cdn-cx-images.dynamite.myharmony.com/deviceicons/wireframes-v2/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "FAQAssets/Image",
+    "Name": "Image"
+   },
+   {
+    "Address": "https://home.myharmony.com/time/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "TimeServer/locale",
+    "Name": "locale"
+   },
+   {
+    "Address": "https://home.myharmony.com/time/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "TimeServer/current",
+    "Name": "current"
+   },
+   {
+    "Address": "https://home.myharmony.com/time/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "TimeServer/zone",
+    "Name": "zone"
+   },
+   {
+    "Address": "https://home.myharmony.com/time/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "TimeServer/country",
+    "Name": "country"
+   },
+   {
+    "Address": "http://geo.myharmony.com/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "GeorestrictionsServer/Georestrictions",
+    "Name": "Georestrictions"
+   },
+   {
+    "Address": "https://home.myharmony.com/internal/login",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "CloudApi/login",
+    "Name": "login"
+   },
+   {
+    "Address": "https://home.myharmony.com/oauth2/token",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "CloudApi/token",
+    "Name": "token"
+   },
+   {
+    "Address": "https://home.myharmony.com/oauth2/deAuthorize",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "CloudApi/deAuthorize",
+    "Name": "deAuthorize"
+   },
+   {
+    "Address": "https://home.myharmony.com/internal/channel/{channel}/message/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "CloudApi/message",
+    "Name": "message"
+   },
+   {
+    "Address": "https://home.myharmony.com/internal/accessPolicy/{:policyId}",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "CloudApi/accessPolicy",
+    "Name": "accessPolicy"
+   },
+   {
+    "Address": "https://home.myharmony.com/internal/wifi",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "CloudApi/postHubWifi",
+    "Name": "postHubWifi"
+   },
+   {
+    "Address": "https://home.myharmony.com/internal/hub/{hubId}/wifi",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "CloudApi/getHubWifi",
+    "Name": "getHubWifi"
+   },
+   {
+    "Address": "https://appcompatibility.myharmony.com/prod/compatibility.json",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "AppCompatability/MobileCtrlQL",
+    "Name": "MobileCtrlQL"
+   },
+   {
+    "Address": "https://appcompatibility.myharmony.com/prod/Olive/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "AppCompatability/DeLinkMessage",
+    "Name": "DeLinkMessage"
+   },
+   {
+    "Address": "https://rcbu-prod-ssl-amr.myharmony.com/Device/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "AWSServices/DeviceIcon",
+    "Name": "DeviceIcon"
+   },
+   {
+    "Address": "https://rcbu-prod-ssl-amr.myharmony.com/Config/HCMapper.json",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "AWSServices/HCMapper",
+    "Name": "HCMapper"
+   },
+   {
+    "Address": "https://rcbu-prod-ssl-amr.myharmony.com/Config/SystemConfig.json",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "AWSServices/SystemConfig",
+    "Name": "SystemConfig"
+   },
+   {
+    "Address": "https://accounts.logi.com/identity/verify",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "LIPService/verify",
+    "Name": "verify"
+   },
+   {
+    "Address": "https://accounts.logi.com/identity/userinfo",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "LIPService/userinfo",
+    "Name": "userinfo"
+   },
+   {
+    "Address": "https://accounts.logi.com/identity/signout",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "LIPService/signout",
+    "Name": "signout"
+   },
+   {
+    "Address": "https://accounts.logi.com/identity/refresh",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "LIPService/refresh",
+    "Name": "refresh"
+   },
+   {
+    "Address": "https://accounts.logi.com/identity/changePassword",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "LIPService/change",
+    "Name": "change"
+   },
+   {
+    "Address": "https://accounts.logi.com/identity/forgot",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "LIPService/forgot",
+    "Name": "forgot"
+   },
+   {
+    "Address": "https://accounts.logi.com/identity/reset",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "LIPService/reset",
+    "Name": "reset"
+   },
+   {
+    "Address": "https://accounts.logi.com/identity/activate",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "LIPService/activate",
+    "Name": "activate"
+   },
+   {
+    "Address": "https://accounts.logi.com/identity/signin",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "LIPService/signin",
+    "Name": "signin"
+   },
+   {
+    "Address": "https://accounts.logi.com/identity/changeclaims",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "LIPService/changeclaims",
+    "Name": "changeclaims"
+   },
+   {
+    "Address": "https://accounts.logi.com/identity/resendVerificationEmail",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "LIPService/resend",
+    "Name": "resend"
+   },
+   {
+    "Address": "https://accounts.logi.com/identity/keys",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "LIPService/keys",
+    "Name": "keys"
+   },
+   {
+    "Address": "https://accounts.logi.com/identity/mail",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "LIPService/mail",
+    "Name": "mail"
+   },
+   {
+    "Address": "https://accounts.logi.com/identity/changeAppClaims",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "LIPService/applicationclaims",
+    "Name": "applicationclaims"
+   },
+   {
+    "Address": "https://accounts.logi.com/identity/oauth2/token",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "LIPService/token",
+    "Name": "token"
+   },
+   {
+    "Address": "https://accounts.logi.com/websso/signout",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "LIPService/webssosignout",
+    "Name": "webssosignout"
+   },
+   {
+    "Address": "https://id.logi.com/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "LIPService/WebSSO",
+    "Name": "WebSSO"
+   },
+   {
+    "Address": "https://id.logi.com/my-account",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "LIPService/AccountInfo",
+    "Name": "AccountInfo"
+   },
+   {
+    "Address": "https://pro.myharmony.com/bpi/identity/profile/{installerId}?client_id=d977452e-29a7-4391-b9c5-7c6b55d2bdb3",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "InstallerService/installerinfo",
+    "Name": "installerinfo"
+   },
+   {
+    "Address": "https://pro.myharmony.com/api/identity/profile/{installerId}?client_id=9417230a-5857-4845-bdc3-504dfd316222",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "InstallerService/hpinstallerinfo",
+    "Name": "hpinstallerinfo"
+   },
+   {
+    "Address": "http://memlip.myharmony.com:11211/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "MemCacheServer/HostName",
+    "Name": "HostName"
+   },
+   {
+    "Address": "https://files.myharmony.com/Assets/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UIAssets/AssetBaseUri",
+    "Name": "AssetBaseUri"
+   },
+   {
+    "Address": "https://www.logitech.com/legal/product-privacy-policy.html",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "PrivacyPolicy/PrivacyPolicyUri",
+    "Name": "PrivacyPolicyUri"
+   },
+   {
+    "Address": "https://files.myharmony.com/Assets/legal/{0}/termsofuse.html",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "TermsofService/TermsofServiceUri",
+    "Name": "TermsofServiceUri"
+   },
+   {
+    "Address": "https://files.myharmony.com/Assets/legal/{0}/harmony.html",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "SLA/SLAUri",
+    "Name": "SLAUri"
+   },
+   {
+    "Address": "https://ems.myharmony.com/1.0/",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "EmailService/sendMail",
+    "Name": "sendMail"
+   }
+  ],
+  "SoapServices": [
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/AccountManager.svc",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "AccountManager",
+    "Name": "AccountManager"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/DeviceManager.svc",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "DeviceManager",
+    "Name": "DeviceManager"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/InternalDeviceManager.svc",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "InternalDeviceManager",
+    "Name": "InternalDeviceManager"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/GlobalDeviceManager.svc",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "GlobalDeviceManager",
+    "Name": "GlobalDeviceManager"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/RemotePlatform/RemoteManager.svc",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "RemoteManager",
+    "Name": "RemoteManager"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/AuthenticationService.svc",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "AuthenticationService",
+    "Name": "AuthenticationService"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/RoleService.svc",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "RoleService",
+    "Name": "RoleService"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/LoggingPlatform/LoggingManager.svc",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "LoggingManager",
+    "Name": "LoggingManager"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/ClogService.svc",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "ClogService",
+    "Name": "ClogService"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/HarmonyPlatform/MonitoringAgent.svc",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "MonitoringAgent",
+    "Name": "MonitoringAgent"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/Discovery/Discovery.svc",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "Discovery",
+    "Name": "Discovery"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/SyncPlatform/CompileManager.svc",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "CompileManager",
+    "Name": "CompileManager"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/SyncPlatform/DeletionManager.svc",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "DeletionManager",
+    "Name": "DeletionManager"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/GuidePlatform/GuideManager.svc",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "GuideManager",
+    "Name": "GuideManager"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/AggregationPlatform/AggregationManager.svc",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "AggregationManager",
+    "Name": "AggregationManager"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/InfraredAnalysisPlatform/InfraredAnalysisManager.svc",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "InfraredAnalysisManager",
+    "Name": "InfraredAnalysisManager"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserFeaturePlatform/UserFeatureManager.svc",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserFeatureManager",
+    "Name": "UserFeatureManager"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserFeaturePlatform/GlobalFeatureManager.svc",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "GlobalFeatureManager",
+    "Name": "GlobalFeatureManager"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserButtonMappingPlatform/UserButtonMappingManager.svc",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserButtonMappingManager",
+    "Name": "UserButtonMappingManager"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserButtonMappingPlatform/FunctionMappingManager.svc",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "FunctionMappingManager",
+    "Name": "FunctionMappingManager"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/CompositeSecurityServices/Security.svc",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "Security",
+    "Name": "Security"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/CompositeSecurityServices/Security.svc/LinkSecurity",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "LinkSecurity",
+    "Name": "LinkSecurity"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/ProductsPlatform/ProductsManager.svc",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "ProductsManager",
+    "Name": "ProductsManager"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/ProductsPlatform/InternalProductsManager.svc",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "InternalProductsManager",
+    "Name": "InternalProductsManager"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/UserAccountDirectorPlatform/UserAccountDirector.svc",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "UserAccountDirector",
+    "Name": "UserAccountDirector"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/EasyZapperPlatform/EasyZapperManager.svc",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "EasyZapperManager",
+    "Name": "EasyZapperManager"
+   },
+   {
+    "Address": "https://perrier-svcs.myharmony.com/GlobalDataPlatform/GlobalDataManager.svc",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "GlobalDataManager",
+    "Name": "GlobalDataManager"
+   },
+   {
+    "Address": "https://perrier-svcs.myharmony.com/PerrierPlatform/PlatformManager.svc",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "PlatformManager",
+    "Name": "PlatformManager"
+   },
+   {
+    "Address": "https://perrier-svcs.myharmony.com/PerrierPlatform/AuthenticationService.svc",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "PerrierAuthenticationService",
+    "Name": "AuthenticationService"
+   },
+   {
+    "Address": "https://perrier-svcs.myharmony.com/PerrierPlatform/RoleService.svc",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "PerrierRoleService",
+    "Name": "RoleService"
+   },
+   {
+    "Address": "https://perrier-svcs.myharmony.com/EasyZapperMigrationPlatform/EasyZapperMigrationManager.svc",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "EasyZapperMigrationManager",
+    "Name": "EasyZapperMigrationManager"
+   },
+   {
+    "Address": "https://perrier-svcs.myharmony.com/DeviceProcessingServices/DeviceAggregationManager.svc",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "DeviceAggregationManager",
+    "Name": "DeviceAggregationManager"
+   },
+   {
+    "Address": "https://perrier-svcs.myharmony.com/CompositeDataServices/DevicePromotionDirector.svc",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "DevicePromotionDirector",
+    "Name": "DevicePromotionDirector"
+   },
+   {
+    "Address": "https://perrier-svcs.myharmony.com/DeviceProcessingServices/DeviceProcessingManager.svc",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "DeviceProcessingManager",
+    "Name": "DeviceProcessingManager"
+   },
+   {
+    "Address": "http://svcs.myharmony.com/InternalHarmonyPlatform/InternalAccountManager.svc",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "InternalAccountManager",
+    "Name": "InternalAccountManager"
+   },
+   {
+    "Address": "http://svcs.myharmony.com/InternalHarmonyPlatform/InternalSystemManager.svc",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "InternalSystemManager",
+    "Name": "InternalSystemManager"
+   },
+   {
+    "Address": "http://svcs.myharmony.com/InternalHarmonyPlatform/AuthenticationService.svc",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "InternalAuthenticationService",
+    "Name": "AuthenticationService"
+   },
+   {
+    "Address": "https://svcs.myharmony.com/ActivityPlatform/ActivityManager.svc",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "ActivityManager",
+    "Name": "ActivityManager"
+   },
+   {
+    "Address": "https://app.sightspeed.com/current/soap/partner.php",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "Vid",
+    "Name": "Vid"
+   },
+   {
+    "Address": "https://files.myharmony.com/ka/LogitechVidPolicyFile.txt",
+    "EnvironmentId": "1.0.x",
+    "Identifier": "VidPolicy",
+    "Name": "VidPolicy"
+   }
+  ]
+ }
+}
