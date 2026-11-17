@@ -32,19 +32,26 @@ docker compose cp harmony-server:/data/certs/ca.crt ./harmony-revival-ca.crt
 
 ## The hub: the hard part
 
-**A stock Harmony Hub will almost certainly reject this CA.** Embedded firmware usually
-ships its own trust bundle, and nothing indicates Logitech's hub accepts user-added roots.
-This has not been tested on hardware yet. Possible outcomes:
+**Tested on hardware (Hub firmware 4.15.600): the hub rejects this CA for Discovery.**
+The hub has two HTTPS clients. Its native client, used for `svcs.myharmony.com`
+(Discovery.svc) and some `home` calls, aborts with `unknown_ca`. Its LuaSocket client,
+used for the `sus` update check and the `home` time call, accepts any certificate. Details,
+including both ClientHellos, are in [hub-findings.md](hub-findings.md).
 
-1. The hub validates against a bundle we cannot change: DNS rewrite alone does not work
-   for the hub. You need root ([hub-root-repoint.md](hub-root-repoint.md)), either to add
-   `ca.crt` to the hub's bundle or to repoint `discoveryServer` to a host you control.
-2. The hub skips verification, or pins nothing for some hosts: the DNS rewrite works as is.
-3. Some calls are plain HTTP (several entries in Logitech's directory are `http://`).
-   Port 80 is served too, so those work.
+So, of the possible outcomes:
 
-Please report which of these you see, with the hub's firmware version. The server logs
-TLS handshake failures, and `/data/captures/*.jsonl` shows what got through.
+1. **Discovery and config sync:** the hub validates against a bundle we cannot change, so a
+   DNS rewrite alone does not work. You need root ([hub-root-repoint.md](hub-root-repoint.md)),
+   either to add `ca.crt` to the hub's bundle or to repoint `discoveryServer` to a host you
+   control.
+2. **Update check and time:** no verification, so the DNS rewrite works as is.
+3. Plain-HTTP calls: the hub opened one empty connection to port 80 during boot and sent
+   no request. Port 80 is served anyway.
+
+If your hub's firmware behaves differently, please report it with the version. The server
+does **not** log TLS handshake failures (uvicorn drops them silently). Use
+`tcpdump host <hub-ip>` and look for a TLS alert from the hub (`15 03 03 00 02 02 30` is
+`unknown_ca`). `/data/captures/*.jsonl` shows what got through.
 
 ## Without TLS
 
