@@ -9,7 +9,7 @@ from __future__ import annotations
 
 from typing import Any, Literal
 
-from pydantic import BaseModel, ConfigDict, Field
+from pydantic import BaseModel, ConfigDict, Field, field_validator
 
 
 class CommandFunction(BaseModel):
@@ -57,6 +57,13 @@ class ActivityIn(BaseModel):
     fixit: dict[str, dict[str, Any]] = Field(default_factory=dict)
     #: Role -> deviceId, e.g. ``{"VolumeActivityRole": "123"}``.
     roles: dict[str, str] = Field(default_factory=dict)
+
+    @field_validator("roles", mode="before")
+    @classmethod
+    def _empty_roles_list(cls, v: Any) -> Any:
+        # A real hub's engine?config (fw 4.15.600) sends PowerOff with "roles": [].
+        return {} if v == [] else v
+
     sequences: list[Any] = Field(default_factory=list)
     controlGroup: list[ControlGroup] | None = None
     activityOrder: int | None = None
