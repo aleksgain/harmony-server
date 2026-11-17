@@ -2,7 +2,7 @@ harmony-server
 Copyright 2026 Harmony Revival contributors
 
 This product includes software developed by the Harmony Revival project
-(https://github.com/harmony-revival).
+(https://github.com/aleksgain/harmony-org).
 
 harmony-server depends on aioharmony (https://github.com/Harmony-Libs/aioharmony),
 licensed under the Apache License 2.0. Any code copied or adapted from aioharmony

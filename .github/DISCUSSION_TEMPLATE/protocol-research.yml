@@ -1,0 +1,55 @@
+title: "[Discovery.svc] "
+labels: ["protocol-research"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Discovery.svc packet capture request
+
+        **Harmony Revival** is an open-source replacement for Logitech's
+        MyHarmony software and cloud, so that Harmony Hubs keep working after
+        Logitech shuts its servers down. The local hub APIs and the IR device
+        database are already documented. One piece is missing: the
+        **config-sync service at `svcs.myharmony.com/Discovery/Discovery.svc`**,
+        which the hub and MyHarmony use to push configuration. Its request and
+        response formats are not published anywhere.
+
+        **Why now:** Logitech's services are still online as of November 2026.
+        When they go, as the Harmony Link servers and the legacy desktop
+        software servers already have, this traffic can never be recorded again,
+        and a replacement server has to guess the format.
+
+        **How to help:** capture MyHarmony syncing or setting up a hub, redact
+        it, and post it with the
+        [hub capture issue template](https://github.com/aleksgain/harmony-server/issues/new?template=hub-capture.md).
+        It has step-by-step mitmproxy, Charles and Wireshark instructions and a
+        redaction checklist. Use this discussion for questions, partial
+        findings, and comparing notes.
+
+        **Raw captures contain your account password and tokens. Never post them
+        unredacted. Do not factory-reset a working hub just to capture setup.**
+  - type: input
+    id: hub
+    attributes:
+      label: Hub model and firmware
+      placeholder: "Harmony Hub, firmware 4.15.600"
+    validations:
+      required: false
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What is this about?
+      options:
+        - I have a capture (posting it as an issue with the template)
+        - I can capture but need help setting up
+        - Analysis of an existing capture
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: Findings, questions, or what went wrong. Redact tokens, account IDs and emails.
+    validations:
+      required: true

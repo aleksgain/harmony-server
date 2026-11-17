@@ -10,7 +10,7 @@
 
 ### Images
 
-`ghcr.io/harmony-revival/harmony-server` with tags `X.Y.Z`, `X.Y` and `latest`.
+`ghcr.io/aleksgain/harmony-server` with tags `X.Y.Z`, `X.Y` and `latest`.
 After the first release, make the package public: Organisation → Packages →
 harmony-server → Package settings → Change visibility.
 

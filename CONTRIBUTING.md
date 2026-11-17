@@ -1,7 +1,7 @@
 # Contributing to harmony-server
 
 Thank you for helping keep Harmony hardware working. This repository is part of
-[Harmony Revival](https://github.com/harmony-revival), an open-source replacement
+[Harmony Revival](https://github.com/aleksgain/harmony-org), an open-source replacement
 for Logitech's MyHarmony software and cloud.
 
 ## The most useful thing you can do right now
@@ -10,14 +10,14 @@ for Logitech's MyHarmony software and cloud.
 The config-sync service (`svcs.myharmony.com/Discovery/Discovery.svc`) is not
 documented anywhere, and once Logitech turns it off, the traffic can never be
 recorded again. Follow the
-[hub capture template](https://github.com/harmony-revival/harmony-server/issues/new?template=hub-capture.md).
+[hub capture template](https://github.com/aleksgain/harmony-server/issues/new?template=hub-capture.md).
 Read its redaction section before posting anything: captures contain account
 tokens.
 
 ## Ground rules
 
-- Be decent. See the [Code of Conduct](https://github.com/harmony-revival/.github/blob/main/.github/CODE_OF_CONDUCT.md).
-- Security problems go to the [security policy](https://github.com/harmony-revival/.github/blob/main/.github/SECURITY.md), not to public issues.
+- Be decent. See the [Code of Conduct](https://github.com/aleksgain/harmony-org/blob/main/.github/CODE_OF_CONDUCT.md).
+- Security problems go to the [security policy](https://github.com/aleksgain/harmony-org/blob/main/.github/SECURITY.md), not to public issues.
 - Do not contribute Logitech code, binaries, private keys or certificates, or
   anything copied from decompiled Logitech software. Describe protocols in your
   own words and with your own captures.
